@@ -1,0 +1,11 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>150</x><y>260</y><w>180</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+CharacterSheet
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>100</y><w>180</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Boundary &gt;&gt;
+CharacterSheet-UI
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>100</y><w>180</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Control&gt;&gt;
+CharacterSheet-Controller
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>20</y><w>180</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Boundary&gt;&gt;
+Session-UI
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>20</y><w>180</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Control&gt;&gt;
+Session-Controller
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
