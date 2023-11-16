@@ -1,0 +1,94 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>616</x><y>200</y><w>136</w><h>48</h></coordinates><panel_attributes>Παίκτης
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>616</x><y>328</y><w>136</w><h>104</h></coordinates><panel_attributes>Χαρακτήρας
+--
+ονοματεπώνυμο
+φύλο
+εικόνα
+σχόλια</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>616</x><y>520</y><w>136</w><h>64</h></coordinates><panel_attributes>Συνεδρία
+--
+ημερομηνία έναρξης
+ώρα έναρξης
+διάρκεια</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>240</y><w>96</w><h>104</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+διαχειρίζεται &gt;</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>120</y><w>136</w><h>80</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Κλάση
+--
+Βάρδος
+Πολεμιστής
+Μάγος</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>744</x><y>160</y><w>136</w><h>208</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+ανήκει σε &gt;</panel_attributes><additional_attributes>10;230;40;230;40;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>424</y><w>96</w><h>112</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+συμμετέχει σε &gt;</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>224</y><w>136</w><h>80</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Φυλή
+--
+Άνθρωπος
+Ξωτικό
+Νάνος</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>344</y><w>136</w><h>104</h></coordinates><panel_attributes>ΣκορΙκανοτήτων
+--
+δύναμη
+επιδεξιότητα
+κράση
+ευφυία
+σοφία
+χάρισμα
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>464</y><w>136</w><h>192</h></coordinates><panel_attributes>ΣκορΔεξιοτήτων
+--
+ακροβατικά
+αντίληψη
+γνώσηΘρησκεία
+γνώσηΙστορία
+γνώσηΜαγεία
+διακριτικότητα
+εκφοβισμός
+εξαπάτηση
+επιβίωση
+παράσταση
+πειστικότητα
+ταχυδακτυλουργία
+χειρισμόςΖώων
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>672</y><w>136</w><h>48</h></coordinates><panel_attributes>Επίπεδο
+--
+πόντοι εμπειρίας</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>736</y><w>136</w><h>56</h></coordinates><panel_attributes>Πόντοι Ζωής
+--
+τωρινοί πόντοι ζωής
+μέγιστοι πόντοι ζωής</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>744</x><y>248</y><w>136</w><h>136</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=1
+ανήκει σε &gt;</panel_attributes><additional_attributes>10;140;70;140;70;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>744</x><y>360</y><w>136</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>744</x><y>384</y><w>136</w><h>176</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes><additional_attributes>10;10;100;10;100;190;150;190</additional_attributes></element><element><id>Relation</id><coordinates><x>744</x><y>400</y><w>136</w><h>320</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes><additional_attributes>10;10;80;10;80;370;150;370</additional_attributes></element><element><id>Relation</id><coordinates><x>744</x><y>416</y><w>136</w><h>368</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes><additional_attributes>10;10;60;10;60;430;150;430</additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>200</y><w>136</w><h>48</h></coordinates><panel_attributes>Game Master
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>488</x><y>240</y><w>104</w><h>120</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+πραγματοποιεί &gt;</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>424</x><y>344</y><w>144</w><h>72</h></coordinates><panel_attributes>ΠρογραμματισμόςΣυνεδρίας
+--
+ημερομηνία
+ώρα
+σχόλια
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>448</x><y>544</y><w>120</w><h>48</h></coordinates><panel_attributes>EmailΠαραλήπτη
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>408</y><w>40</w><h>152</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..*</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>576</y><w>32</w><h>96</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>616</x><y>656</y><w>136</w><h>48</h></coordinates><panel_attributes>Ζαριά
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>656</y><w>136</w><h>48</h></coordinates><panel_attributes>ΖαριάΙκανότητας
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>720</y><w>136</w><h>48</h></coordinates><panel_attributes>ΖαριάΔεξιότητας
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>616</x><y>760</y><w>136</w><h>48</h></coordinates><panel_attributes>ΖαριάΠρωτοβουλίας
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>696</y><w>24</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>568</x><y>696</y><w>136</w><h>64</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;150;60;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>568</x><y>672</y><w>120</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;40;130;70;40;70;40;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>480</y><w>120</w><h>48</h></coordinates><panel_attributes>EmailΑποστολέα
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>408</y><w>32</w><h>88</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element></diagram>
