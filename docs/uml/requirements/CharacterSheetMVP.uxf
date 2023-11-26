@@ -1,11 +1,11 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>180</x><y>30</y><w>220</w><h>590</h></coordinates><panel_attributes>CharacterSheet
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>180</x><y>20</y><w>220</w><h>590</h></coordinates><panel_attributes>CharacterSheet
 --
 -Name:String
 -Id:Integer
 -Gender:Gender
 -Description:String
--Class:Class
--Race:Race
+-Class:String
+-Race:String
 -Strength:Integer
 -Dexterity:Integer
 -Constitution:Integer
@@ -26,6 +26,7 @@
 +SetCharisma(Charisma:Integer)
 --
 +GetName:String
++GetId:Integer
 +GetGender:String 
 +GetDescription:String
 +GetRace:String
@@ -35,4 +36,5 @@
 +GetConstitution:Integer
 +GetIntelligence:Integer
 +GetWisdom:Integer
-+GetCharisma:Integer</panel_attributes><additional_attributes></additional_attributes></element></diagram>
++GetCharisma:Integer
++PrintSheet:String</panel_attributes><additional_attributes></additional_attributes></element></diagram>
