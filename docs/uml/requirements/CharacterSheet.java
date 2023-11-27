@@ -111,7 +111,7 @@ public class CharacterSheet{
 		}
 		
 		public String printSheet() {
-			return getName();
+			return "Name: " + getName() + "\nID: " + getID() + "\nGender: " + getGender() + "\nDescription: " + getDescription() + "\nRace: " + getRace() + "\nClass: " + getClass() + "\nStrength: " + getStrength() + "\nDexterity: " + getDexterity() + "\nConstitution: " + getConsitution() + "\nIntelligence: " + getIntelligence() + "\nWisdom: " + getWisdom() + "\nCharisma: " + getCharisma();
 		}
 		
 	}
