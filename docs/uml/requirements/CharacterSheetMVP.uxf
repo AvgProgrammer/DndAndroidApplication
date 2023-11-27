@@ -14,6 +14,7 @@
 -Charisma:Integer
 --
 +SetName(Name:String)
++SetId(Id:Integer)
 +SetGender(PseudoGender:Integer)
 +SetDescription(Description:String)
 +SetRace(PseudoRace:Integer)
