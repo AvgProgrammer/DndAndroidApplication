@@ -9,7 +9,7 @@ public class CharacterSheet{
 			ID = strength = dexterity = constitution = intelligence = wisdom = charisma = 0;
 			gender = null;
 			description = "";
-			Class = null;
+			dndClass = null;
 			race = null;
 			
 		}
