@@ -1,9 +1,9 @@
 public class CharacterSheet{
 		
-		private String name, gender, description, Class, race;
+		private String name, gender, description, dndClass, race;
 		private int ID, strength, dexterity, constitution, intelligence, wisdom, charisma;
 		
-		public CharacterSheet(String name, int ID, String gender, String description, String Class, String race, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+		public CharacterSheet(String name, int ID, String gender, String description, String dndClass, String race, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
 			
 			name = "";
 			ID = strength = dexterity = constitution = intelligence = wisdom = charisma = 0;
@@ -34,8 +34,8 @@ public class CharacterSheet{
 			this.race = race;
 		}
 		
-		public void setClass(String Class) {
-			this.Class = Class;
+		public void setdndClass(String dndClass) {
+			this.dndClass = dndClass;
 		}
 		
 		public void setStrength(int strength) {
@@ -82,8 +82,8 @@ public class CharacterSheet{
 			return this.race;
 		}
 		
-		public String getClass() {
-			return this.Class;
+		public String getdndClass() {
+			return this.dndClass;
 		}
 		
 		public int getStrength() {
@@ -111,7 +111,7 @@ public class CharacterSheet{
 		}
 		
 		public String printSheet() {
-			return "Name: " + getName() + "\nID: " + getID() + "\nGender: " + getGender() + "\nDescription: " + getDescription() + "\nRace: " + getRace() + "\nClass: " + getClass() + "\nStrength: " + getStrength() + "\nDexterity: " + getDexterity() + "\nConstitution: " + getConsitution() + "\nIntelligence: " + getIntelligence() + "\nWisdom: " + getWisdom() + "\nCharisma: " + getCharisma();
+			return "Name: " + getName() + "\nID: " + getID() + "\nGender: " + getGender() + "\nDescription: " + getDescription() + "\nRace: " + getRace() + "\nClass: " + getdndClass() + "\nStrength: " + getStrength() + "\nDexterity: " + getDexterity() + "\nConstitution: " + getConsitution() + "\nIntelligence: " + getIntelligence() + "\nWisdom: " + getWisdom() + "\nCharisma: " + getCharisma();
 		}
 		
 	}
