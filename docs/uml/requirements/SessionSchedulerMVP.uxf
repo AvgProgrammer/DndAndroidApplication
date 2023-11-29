@@ -1,13 +1,13 @@
 <diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>480</x><y>120</y><w>220</w><h>240</h></coordinates><panel_attributes>Session
 --
--Sender:Email
+-Sender:String
 -Recipients:Email(1,*)
 -Description:String
 -Date:Date
 -Time:String
 -Location:String
 --
-+GetSender(Email:email)
++GetSender(Email:String)
 +GetRecipients()
 +GetDescription(Description:String)
 +GetDate(Date:Date)
