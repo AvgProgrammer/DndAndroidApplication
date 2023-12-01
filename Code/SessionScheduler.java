@@ -54,6 +54,6 @@ public class SessionScheduler {
         this.time=Time;
     }
     public void sendEmail(){
-
+        System.out.println("Email was sent");
     }
 }

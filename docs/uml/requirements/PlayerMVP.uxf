@@ -9,6 +9,7 @@
 +SetName(Name:String)
 +SetEmail(Email:String)
 +SetCode(Code:String)
+--
 +GetName(Name:String)
 +GetEmail(Email:String)
 +GetCode(Code:String)

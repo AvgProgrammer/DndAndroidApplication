@@ -4,7 +4,7 @@ import java.util.List;
 public class Player {
     private String Name,Email,Code;
     private list<CharacterSheet> Characters=new Arraylist();
-    private list<SessionScheduler> Sessions=new Arraylist();
+    private List<SessionScheduler> Sessions=new Arraylist();
     
     public void SetName(String name){
         this.Name=name;
@@ -26,11 +26,11 @@ public class Player {
         return Code;
     }
 
-    public void AddCharacter(){
-        
+    public void AddCharacter(ChraracterSheet x){
+        Characters.add(x);
     }
-    public void AddSession(){
-        
+    public void AddSession(SessionScheduler x){
+        Sessions.add(x);
     }
 }
 
