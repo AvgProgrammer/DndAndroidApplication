@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>490</x><y>100</y><w>280</w><h>330</h></coordinates><panel_attributes>Player
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>490</x><y>100</y><w>280</w><h>240</h></coordinates><panel_attributes>Player
 --
 -Name:String
 -Email:String
@@ -6,6 +6,9 @@
 -CharacterSheetList:CharacterSheet
 -SessionList:SessionScheduler
 --
++SetName(Name:String)
++SetEmail(Email:String)
++SetCode(Code:String)
 +GetName(Name:String)
 +GetEmail(Email:String)
 +GetCode(Code:String)
