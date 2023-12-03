@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Player {
     private String Name,Email,Code;
-    private list<CharacterSheet> Characters=new Arraylist();
-    private List<SessionScheduler> Sessions=new Arraylist();
+    private List<CharacterSheet> Characters=new ArrayList();
+    private List<SessionScheduler> Sessions=new ArrayList();
     
     public void SetName(String name){
         this.Name=name;
@@ -26,7 +26,7 @@ public class Player {
         return Code;
     }
 
-    public void AddCharacter(ChraracterSheet x){
+    public void AddCharacter(CharacterSheet x){
         Characters.add(x);
     }
     public void AddSession(SessionScheduler x){

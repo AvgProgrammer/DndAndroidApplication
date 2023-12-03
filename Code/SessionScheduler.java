@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.time;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -13,22 +12,8 @@ public class SessionScheduler {
     public void getSender(String Sender){
         this.sender=Sender;
     }
-    public void getRecipents(){
-        String answer="Yes";
-        bool done=false;
-        do{
-            System.out.println(x);
-            if(answer=="Yes"){
-                System.out.print("Enter email:");
-                Scanner cs=new Scanner(System.in);
-                String x = cs.nextLine();
-                Recipients.add(x);
-                cs.close();
-            }else{
-                done=true;
-            }
-        }
-        while(done=false);
+    public void getRecipents(List<String> Emails){
+        Recipients=Emails;
     }
     public void getDescription(String Description){
         this.description=Description;
