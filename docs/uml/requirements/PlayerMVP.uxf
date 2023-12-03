@@ -3,7 +3,7 @@
 -Name:String
 -Email:String
 -Code:String
--CharacterSheetList:CharacterSheet
+-CharactersList:CharacterSheet
 -SessionList:SessionScheduler
 --
 +SetName(Name:String)
