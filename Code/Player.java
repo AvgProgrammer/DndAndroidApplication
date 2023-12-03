@@ -9,8 +9,10 @@ public class Player {
 
     public Player(String Name, String Email, String Password, List<CharacterSheet> Characters,
             List<SessionScheduler> Sessions) {
+
         Name = Email = Password = "";
         Characters = Sessions = null;
+
     }
 
     public boolean isEmpty() {
@@ -41,7 +43,7 @@ public class Player {
         return Password;
     }
 
-    public void AddCharacter(ChraracterSheet x) {
+    public void AddCharacter(CharacterSheet x) {
         Characters.add(x);
     }
 
