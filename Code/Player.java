@@ -4,7 +4,9 @@ import java.util.List;
 public class Player {
 
     private String Name, Email, Password;
-
+        List<CharacterSheet>Characters;
+        List<SessionScheduler>Sessions;
+        
     public Player(String name, String email, String password) {
         this.Name=name;
         this.Email=email;
