@@ -4,17 +4,15 @@ import java.util.List;
 public class Player {
 
     private String Name, Email, Password;
-    private List<CharacterSheet> Characters = new Arraylist();
-    private List<SessionScheduler> Sessions = new Arraylist();
 
-    public Player(String Name, String Email, String Password, List<CharacterSheet> Characters,
-            List<SessionScheduler> Sessions) {
-
-        Name = Email = Password = "";
-        Characters = Sessions = null;
-
+    public Player(String name, String email, String password) {
+        this.Name=name;
+        this.Email=email;
+        this.Password=password;
+        this.Characters = new Arraylist();
+        this.Sessions = new Arraylist();
     }
-    
+
     public void SetName(String name) {
         this.Name = name;
     }

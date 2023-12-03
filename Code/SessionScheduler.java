@@ -7,8 +7,15 @@ import java.util.Scanner;
 
 public class SessionScheduler {
     private String sender,description,location,time;
-    private List<String> Recipients=new ArrayList<String>();
+    private List<String> Recipients;
 
+    public SessionScheduler(){
+        this.sender="";
+        this.description="";
+        this.location="";
+        this.time="";
+        this.Recipients=new ArrayList<String>();
+    }
     public void getSender(String Sender){
         this.sender=Sender;
     }
