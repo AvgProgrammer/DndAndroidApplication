@@ -19,7 +19,7 @@ public class SessionScheduler {
         this.description=Description;
     }
     public void getDate(){
-         Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the date (yyyy-MM-dd): ");
         String userInput = scanner.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

@@ -14,11 +14,7 @@ public class Player {
         Characters = Sessions = null;
 
     }
-
-    public boolean isEmpty() {
-        return Characters.length();
-    }
-
+    
     public void SetName(String name) {
         this.Name = name;
     }
