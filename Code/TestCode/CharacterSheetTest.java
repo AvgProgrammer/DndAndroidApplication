@@ -108,4 +108,9 @@ public class CharacterSheetTest {
 
         Assertions.assertEquals(expectedOutput, characterSheet.printSheet());
     }
+    @Test
+    public void testaddExp(){
+        characterSheet.addExp(2000);
+        Assertions.assertEquals(2, characterSheet.getlevel());
+    }
 }

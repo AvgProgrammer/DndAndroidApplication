@@ -15,8 +15,8 @@ public class CharacterSheet{
 		}
 		public void addExp(int exp){
 			if (Exp+exp>=1000){
-				this.level=level+1;
-				this.Exp=Exp+exp-1000;
+				this.level=level+((Exp+exp)/1000);
+				this.Exp=(Exp+exp)%1000;
 			}else{
 				this.Exp=Exp+exp;
 			}
