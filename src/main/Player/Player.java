@@ -1,51 +1,54 @@
-package java.general;
+package Player;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import CharacterSheet.CharacterSheet;
+import SessionScheduler.SessionScheduler;
+
 
 public class Player {
 
-    private String Name, Email, Password;
-        List<CharacterSheet>Characters;
-        List<SessionScheduler>Sessions;
+    private String name, email, password;
+        private ArrayList<CharacterSheet> characters;
+       private  ArrayList<SessionScheduler> sessions;
         
     public Player(String name, String email, String password) {
-        this.Name=name;
-        this.Email=email;
-        this.Password=password;
-        this.Characters = new ArrayList();
-        this.Sessions = new ArrayList();
+        this.name=name;
+        this.email=email;
+        this.password=password;
+        this.characters = new ArrayList<CharacterSheet>();
+        this.sessions = new ArrayList<SessionScheduler>();
     }
 
-    public void SetName(String name) {
-        this.Name = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void SetPassword(String Password) {
-        this.Password = Password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void SetEmail(String email) {
-        this.Email = email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String GetName() {
-        return Name;
+        return name;
     }
 
     public String GetEmail() {
-        return Email;
+        return email;
     }
 
     public String GetPassword() {
-        return Password;
+        return password;
     }
 
     public void AddCharacter(CharacterSheet x) {
-        Characters.add(x);
+        characters.add(x);
     }
 
     public void AddSession(SessionScheduler x) {
-        Sessions.add(x);
+        sessions.add(x);
     }
 }

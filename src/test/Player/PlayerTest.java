@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
+import SessionScheduler.SessionScheduler;
+import CharacterSheet.CharacterSheet;
 
 public class PlayerTest {
 
@@ -24,26 +26,26 @@ public class PlayerTest {
 
     @Test
     public void testSetName() {
-        player.SetName("Alice");
+        player.setName("Alice");
         Assertions.assertEquals("Alice", player.GetName());
     }
 
     @Test
     public void testSetPassword() {
-        player.SetPassword("newpassword");
+        player.setPassword("newpassword");
         Assertions.assertEquals("newpassword", player.GetPassword());
     }
 
     @Test
     public void testSetEmail() {
-        player.SetEmail("alice@example.com");
+        player.setEmail("alice@example.com");
         Assertions.assertEquals("alice@example.com", player.GetEmail());
     }
 
     @Test
     public void testAddCharacter() {
         Player player = new Player("John Doe", "john@example.com", "password123");
-        CharacterSheet character = new CharacterSheet("Character1", 1, "Male", "Description", "Class1", "Race1", 10, 10, 10, 10, 10, 10);
+        CharacterSheet character = new CharacterSheet("Character1", 1, "Male", "Description", "Class1", "Race1", 10, 10, 10, 10, 10, 10,0);
 
         player.AddCharacter(character);
 
