@@ -1,19 +1,29 @@
 public class CharacterSheet{
 		
 		private String name, gender, description, dndClass, race;
-		private int ID, strength, dexterity, constitution, intelligence, wisdom, charisma;
+		private int ID, strength, dexterity, constitution, intelligence, wisdom, charisma,level,Exp;
 		
 		public CharacterSheet(String name, int ID, String gender, String description, String dndClass, String race, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
 			
 			name = "";
-			ID = strength = dexterity = constitution = intelligence = wisdom = charisma = 0;
+			ID = strength = dexterity = constitution = intelligence = wisdom = charisma = level= Exp = 0;
 			gender = null;
 			description = "";
 			dndClass = null;
 			race = null;
 			
 		}
-		
+		public void addExp(int exp){
+			if (Exp+exp>=1000){
+				this.level=level+1;
+				this.Exp=Exp+exp-1000;
+			}else{
+				this.Exp=Exp+exp;
+			}
+		}
+		public int getlevel(){
+			return level;
+		}
 		public void setName(String name) {
 			this.name = name;
 		}

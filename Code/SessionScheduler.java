@@ -1,9 +1,6 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 public class SessionScheduler {
     private String sender,description,location,time;
