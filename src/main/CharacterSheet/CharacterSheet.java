@@ -1,3 +1,5 @@
+package java.general;
+
 public class CharacterSheet{
 		
 		private String name, gender, description, dndClass, race;
