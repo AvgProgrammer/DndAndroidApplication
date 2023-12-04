@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class SessionScheduler {
     private String sender,description,location,time;
     private List<String> Recipients;
+    private LocalDate Date;
 
     public SessionScheduler(){
         this.sender="";
@@ -16,33 +17,22 @@ public class SessionScheduler {
         this.time="";
         this.Recipients=new ArrayList<String>();
     }
-    public void getSender(String Sender){
+    public void setSender(String Sender){
         this.sender=Sender;
     }
-    public void getRecipents(List<String> Emails){
+    public void setRecipents(List<String> Emails){
         Recipients=Emails;
     }
-    public void getDescription(String Description){
+    public void setDescription(String Description){
         this.description=Description;
     }
-    public void getDate(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the date (yyyy-MM-dd): ");
-        String userInput = scanner.nextLine();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        try {
-            LocalDate inputDate = LocalDate.parse(userInput, formatter);
-            System.out.println("Parsed Date: " + inputDate);
-        } catch (Exception e) {
-            System.out.println("Invalid input. Please enter the date in the yyyy-MM-dd format.");
-        } finally {
-            scanner.close();
-        }
+    public void setDate(LocalDate date){
+        this.Date=date;
     }
-    public void getLocation(String Location){
+    public void setLocation(String Location){
         this.location=Location;
     }
-    public void getTime(String Time){
+    public void setTime(String Time){
         this.time=Time;
     }
     public void sendEmail(){
