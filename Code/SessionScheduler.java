@@ -1,62 +1,41 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class SessionScheduler {
-    private String sender, description, location, sessionTime;
-    private List<String> recipients = new ArrayList<String>();
+    private String sender,description,location,time;
+    private List<String> Recipients;
+    private LocalDate Date;
 
-    public void setSender(String sender) {
-        this.sender = sender;
+    public SessionScheduler(){
+        this.sender="";
+        this.description="";
+        this.location="";
+        this.time="";
+        this.Recipients=new ArrayList<String>();
     }
-
-    public void git  {
-        String answer = "Yes";
-        boolean done = false;
-        String x;
-        do {
-            if (answer.equals("Yes")) {
-                System.out.print("Enter email:");
-                Scanner cs = new Scanner(System.in);
-                x = cs.nextLine();
-                recipients.add(x);
-                cs.close();
-            } else {
-                done = true;
-            }
-        } while (!done);
+    public void setSender(String Sender){
+        this.sender=Sender;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setRecipents(List<String> Emails){
+        Recipients=Emails;
     }
-
-    public void getDate() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the date (yyyy-MM-dd): ");
-        String userInput = scanner.nextLine();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        try {
-            LocalDate inputDate = LocalDate.parse(userInput, formatter);
-            System.out.println("Parsed Date: " + inputDate);
-        } catch (Exception e) {
-            System.out.println("Invalid input. Please enter the date in the yyyy-MM-dd format.");
-        } finally {
-            scanner.close();
-        }
+    public void setDescription(String Description){
+        this.description=Description;
     }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public void setDate(LocalDate date){
+        this.Date=date;
     }
-
-    public void setTime(String sessionTime) {
-        this.sessionTime = sessionTime;
+    public void setLocation(String Location){
+        this.location=Location;
     }
-
-    public void sendEmail() {
-
+    public void setTime(String Time){
+        this.time=Time;
+    }
+    public void sendEmail(){
+        System.out.println("Email was sent");
     }
 }

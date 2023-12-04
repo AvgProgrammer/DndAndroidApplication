@@ -7,10 +7,10 @@
 -Time:String
 -Location:String
 --
-+GetSender(Email:String)
-+GetRecipients()
-+GetDescription(Description:String)
-+GetDate(Date:Date)
-+GetLocation(Locarion:String)
-+GetTime(Time:String)
++SetSender(Email:String)
++SetRecipients(Recipients:String(1,*))
++SetDescription(Description:String)
++SetDate(Date:String)
++SetLocation(Locarion:String)
++SetTime(Time:String)
 +SentEmail()</panel_attributes><additional_attributes></additional_attributes></element></diagram>

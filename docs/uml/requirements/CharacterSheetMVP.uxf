@@ -18,7 +18,7 @@
 +SetGender(PseudoGender:Integer)
 +SetDescription(Description:String)
 +SetRace(PseudoRace:Integer)
-+SetClass(PseudoClass:Integer)
++SetdndClass(PseudoClass:Integer)
 +SetStrength(Strength:Integer)
 +SetDexterity(Dexterity:Integer)
 +SetConstitution(Constitution:Integer)
@@ -31,7 +31,7 @@
 +GetGender:String 
 +GetDescription:String
 +GetRace:String
-+GetClass:String
++GetdndClass:String
 +GetStrength:Integer
 +GetDexterity:Integer
 +GetConstitution:Integer
