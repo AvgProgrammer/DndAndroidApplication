@@ -1,9 +1,10 @@
+package CharacterSheet;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
-import java.general.CharacterSheet;
+import CharacterSheet.CharacterSheet;
 
 public class CharacterSheetTest {
 
@@ -11,7 +12,7 @@ public class CharacterSheetTest {
 
     @BeforeEach
     public void setUp() {
-        characterSheet = new CharacterSheet("", 0, null, "", null, null, 0, 0, 0, 0, 0, 0);
+        characterSheet = new CharacterSheet("", 0, null, "", null, null, 0, 0, 0, 0, 0, 0,0);
     }
 
     @AfterEach
@@ -45,14 +46,14 @@ public class CharacterSheetTest {
 
     @Test
     public void testSetRace() {
-        characterSheet.setRace("Human");
-        Assertions.assertEquals("Human", characterSheet.getRace());
+        characterSheet.setRace(Race.Human);
+        Assertions.assertEquals(Race.Human, characterSheet.getRace());
     }
 
     @Test
     public void testSetDndClass() {
-        characterSheet.setdndClass("Warrior");
-        Assertions.assertEquals("Warrior", characterSheet.getdndClass());
+        characterSheet.setdndClass(DnDClass.Wizard);
+        Assertions.assertEquals(DnDClass.Wizard, characterSheet.getdndClass());
     }
 
     @Test
@@ -90,29 +91,45 @@ public class CharacterSheetTest {
         characterSheet.setCharisma(8);
         Assertions.assertEquals(8, characterSheet.getCharisma());
     }
+    @Test
+    public void testGetStrengthModifier() {
+        characterSheet.setStrength(12);
+        Assertions.assertEquals(1, characterSheet.getStrengthModifier());
+    }
 
     @Test
-    public void testPrintSheet() {
-        characterSheet.setName("Alice");
-        characterSheet.setID(456);
-        characterSheet.setGender("Female");
-        characterSheet.setDescription("A wise mage");
-        characterSheet.setRace("Elf");
-        characterSheet.setdndClass("Wizard");
-        characterSheet.setStrength(10);
-        characterSheet.setDexterity(12);
-        characterSheet.setConstitution(14);
-        characterSheet.setIntelligence(18);
-        characterSheet.setWisdom(16);
-        characterSheet.setCharisma(8);
-
-        String expectedOutput = "Name: Alice\nID: 456\nGender: Female\nDescription: A wise mage\nRace: Elf\nClass: Wizard\nStrength: 10\nDexterity: 12\nConstitution: 14\nIntelligence: 18\nWisdom: 16\nCharisma: 8";
-
-        Assertions.assertEquals(expectedOutput, characterSheet.printSheet());
+    public void testGetDexterityModifier() {
+        characterSheet.setDexterity(17);
+        Assertions.assertEquals(3, characterSheet.getDexterityModifier());
     }
+
+    @Test
+    public void testGetConstitutionModifier() {
+        characterSheet.setConstitution(9);
+        Assertions.assertEquals(-1, characterSheet.getConsitutionModifier());
+    }
+
+    @Test
+    public void testGetIntelligenceModifier() {
+        characterSheet.setIntelligence(15);
+        Assertions.assertEquals(2, characterSheet.getIntelligenceModifier());
+    }
+
+    @Test
+    public void testGetWisdomModifier() {
+        characterSheet.setWisdom(5);
+        Assertions.assertEquals(-3, characterSheet.getWisdomModifier());
+    }
+
+    @Test
+    public void testGetCharismaModifier() {
+        characterSheet.setCharisma(9);
+        Assertions.assertEquals(-1, characterSheet.getCharismaModifier());
+    }
+
     @Test
     public void testaddExp(){
-        characterSheet.addExp(2000);
-        Assertions.assertEquals(2, characterSheet.getlevel());
+        characterSheet.addExp(2001);
+        Assertions.assertEquals(3, characterSheet.getlevel());
     }
 }
