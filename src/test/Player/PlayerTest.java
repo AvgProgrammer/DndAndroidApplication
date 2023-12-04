@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import SessionScheduler.SessionScheduler;
-import CharacterSheet.CharacterSheet;
+import CharacterSheet.*;
 
 public class PlayerTest {
 
@@ -45,7 +45,7 @@ public class PlayerTest {
     @Test
     public void testAddCharacter() {
         Player player = new Player("John Doe", "john@example.com", "password123");
-        CharacterSheet character = new CharacterSheet("Character1", 1, "Male", "Description", "Class1", "Race1", 10, 10, 10, 10, 10, 10,0);
+        CharacterSheet character = new CharacterSheet("Character1", 1, "Male", "Description", DnDClass.Wizard, Race.Human, 10, 10, 10, 10, 10, 10,0);
 
         player.AddCharacter(character);
 
