@@ -12,12 +12,11 @@ public class SessionScheduler {
         this.sender = sender;
     }
 
-    public void getRecipients() {
+    public void git  {
         String answer = "Yes";
         boolean done = false;
         String x;
         do {
-            System.out.println(x);
             if (answer.equals("Yes")) {
                 System.out.print("Enter email:");
                 Scanner cs = new Scanner(System.in);
