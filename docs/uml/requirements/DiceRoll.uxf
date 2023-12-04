@@ -1,0 +1,18 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>450</x><y>70</y><w>410</w><h>240</h></coordinates><panel_attributes>DiceRoll
+--
+-result:Integer
+-modifier:Integer
+-description:String
+-diceRNG:DiceRng
+--
++roll()
++setResult(result:Integer)
++setModifier(modifier:Integer)
++setDescription(description:String)
++setDiceRNG(diceRNG:DiceRNG)
+--
++getResult():Integer
++getModifier():Integer
++getDescription():String
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

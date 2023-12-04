@@ -1,0 +1,15 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>550</x><y>160</y><w>350</w><h>240</h></coordinates><panel_attributes>Session
+--
+-Id:Integer
+-CharacterSheet:CharacterSheet
+-diceRoll:DiceRoll
+--
++setId(id:Integer)
++setCharacterSheet(CharacterSheet:characterSheet) 
++setDiceRolls(diceRoll:DiceRoll)
+--
++getId:Integer
++getCharacterSheet:characterSheet
++getDiceRolls:DiceRoll
++addDiceRoll(diceRoll:DdiceRoll) 
++addExpPoints(expPoints:Integer)</panel_attributes><additional_attributes></additional_attributes></element></diagram>
