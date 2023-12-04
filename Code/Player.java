@@ -11,8 +11,8 @@ public class Player {
         this.Name=name;
         this.Email=email;
         this.Password=password;
-        this.Characters = new Arraylist();
-        this.Sessions = new Arraylist();
+        this.Characters = new ArrayList();
+        this.Sessions = new ArrayList();
     }
 
     public void SetName(String name) {
