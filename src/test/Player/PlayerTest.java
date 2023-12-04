@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
-import SessionScheduler.SessionScheduler;
+import Session.Session;
 import CharacterSheet.*;
 
 public class PlayerTest {
@@ -49,14 +49,14 @@ public class PlayerTest {
 
         player.AddCharacter(character);
 
-        assertFalse(player.Characters.isEmpty());
-        assertTrue(player.Characters.contains(character));
+        assertFalse(player.getCharacters().isEmpty());
+        assertTrue(player.getCharacters().contains(character));
     }
 
     @Test
     public void testAddSession() {
-        SessionScheduler session = new SessionScheduler();
+        Session session = new Session();
         player.AddSession(session);
-        Assertions.assertTrue(player.Sessions.contains(session));
+        Assertions.assertTrue(player.getSessions().contains(session));
     }
 }

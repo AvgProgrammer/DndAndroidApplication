@@ -3,6 +3,7 @@ package Player;
 import java.util.ArrayList;
 
 import CharacterSheet.CharacterSheet;
+import Session.Session;
 import SessionScheduler.SessionScheduler;
 
 
@@ -10,14 +11,14 @@ public class Player {
 
     private String name, email, password;
         private ArrayList<CharacterSheet> characters;
-       private  ArrayList<SessionScheduler> sessions;
+       private  ArrayList<Session> sessions;
         
     public Player(String name, String email, String password) {
         this.name=name;
         this.email=email;
         this.password=password;
         this.characters = new ArrayList<CharacterSheet>();
-        this.sessions = new ArrayList<SessionScheduler>();
+        this.sessions = new ArrayList<Session>();
     }
 
     public void setName(String name) {
@@ -44,11 +45,18 @@ public class Player {
         return password;
     }
 
+    public ArrayList<CharacterSheet> getCharacters(){
+        return characters;
+    }
+    public ArrayList<Session> getSessions(){
+        return sessions;
+    }
+
     public void AddCharacter(CharacterSheet x) {
         characters.add(x);
     }
 
-    public void AddSession(SessionScheduler x) {
+    public void AddSession(Session x) {
         sessions.add(x);
     }
 }
