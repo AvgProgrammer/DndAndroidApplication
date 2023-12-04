@@ -126,6 +126,10 @@ public class CharacterSheet {
 		return level;
 	}
 
+	public int getExp(){
+		return this.expPoints;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
