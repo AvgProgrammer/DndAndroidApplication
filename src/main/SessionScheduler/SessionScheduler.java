@@ -1,4 +1,4 @@
-package java.general;
+package SessionScheduler;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
