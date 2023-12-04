@@ -17,12 +17,12 @@ public class Session {
     }
 
     public Session() {
-        this.id = -1;
-        this.characterSheet = null;
-        this.diceRolls = null;
+        this.id = this.hashCode();
+        this.characterSheet = new CharacterSheet();
+        this.diceRolls = new ArrayList<DiceRoll>();
     }
 
-    public void addDiceRoll(DiceRoll diceRoll){
+    public void addDiceRoll(DiceRoll diceRoll) {
         this.diceRolls.add(diceRoll);
     }
 
