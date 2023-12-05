@@ -1,0 +1,165 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Player</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">Player</a>
+</div>
+
+<h1>Coverage Summary for Class: Player (Player)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Player</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package Player;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+&nbsp;import CharacterSheet.CharacterSheet;
+&nbsp;import Session.Session;
+&nbsp;import SessionScheduler.SessionScheduler;
+&nbsp;
+&nbsp;
+&nbsp;public class Player {
+&nbsp;
+&nbsp;    private String name, email, password;
+&nbsp;        private ArrayList&lt;CharacterSheet&gt; characters;
+&nbsp;       private  ArrayList&lt;Session&gt; sessions;
+&nbsp;        
+<b class="fc">&nbsp;    public Player(String name, String email, String password) {</b>
+<b class="fc">&nbsp;        this.name=name;</b>
+<b class="fc">&nbsp;        this.email=email;</b>
+<b class="fc">&nbsp;        this.password=password;</b>
+<b class="fc">&nbsp;        this.characters = new ArrayList&lt;CharacterSheet&gt;();</b>
+<b class="fc">&nbsp;        this.sessions = new ArrayList&lt;Session&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setName(String name) {
+<b class="fc">&nbsp;        this.name = name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setPassword(String password) {
+<b class="fc">&nbsp;        this.password = password;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEmail(String email) {
+<b class="fc">&nbsp;        this.email = email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String GetName() {
+<b class="fc">&nbsp;        return name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String GetEmail() {
+<b class="fc">&nbsp;        return email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String GetPassword() {
+<b class="fc">&nbsp;        return password;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public ArrayList&lt;CharacterSheet&gt; getCharacters(){
+<b class="fc">&nbsp;        return characters;</b>
+&nbsp;    }
+&nbsp;    public ArrayList&lt;Session&gt; getSessions(){
+<b class="fc">&nbsp;        return sessions;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void AddCharacter(CharacterSheet x) {
+<b class="fc">&nbsp;        characters.add(x);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void AddSession(Session x) {
+<b class="fc">&nbsp;        sessions.add(x);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-04 21:43</div>
+</div>
+</body>
+</html>

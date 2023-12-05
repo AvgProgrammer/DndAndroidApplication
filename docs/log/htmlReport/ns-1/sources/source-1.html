@@ -1,0 +1,288 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > CharacterSheet</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">CharacterSheet</a>
+</div>
+
+<h1>Coverage Summary for Class: CharacterSheet (CharacterSheet)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CharacterSheet</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97.3%
+  </span>
+  <span class="absValue">
+    (36/37)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98.4%
+  </span>
+  <span class="absValue">
+    (62/63)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package CharacterSheet;
+&nbsp;
+&nbsp;public class CharacterSheet {
+&nbsp;
+&nbsp;	private String name, gender, description;
+&nbsp;	private int ID, level, expPoints;
+&nbsp;	private int strength, dexterity, constitution, intelligence, wisdom, charisma;
+&nbsp;	private DnDClass dndClass;
+&nbsp;	private Race race;
+&nbsp;
+<b class="fc">&nbsp;	public CharacterSheet() {</b>
+<b class="fc">&nbsp;		this.name = &quot;&quot;;</b>
+<b class="fc">&nbsp;		this.ID = this.hashCode();</b>
+<b class="fc">&nbsp;		this.strength = this.dexterity = this.constitution = this.intelligence = this.wisdom = this.charisma = this.level = this.expPoints = 0;</b>
+<b class="fc">&nbsp;		this.gender = &quot;Unknown&quot;;</b>
+<b class="fc">&nbsp;		this.description = &quot;&quot;;</b>
+<b class="fc">&nbsp;		this.dndClass = null;</b>
+<b class="fc">&nbsp;		this.race = null;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public CharacterSheet(String name, int ID, String gender, String description, DnDClass dndClass, Race race,
+<b class="fc">&nbsp;			int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int expPoints) {</b>
+<b class="fc">&nbsp;		this.name = name;</b>
+<b class="fc">&nbsp;		this.ID = ID;</b>
+<b class="fc">&nbsp;		this.strength = strength;</b>
+<b class="fc">&nbsp;		this.dexterity = dexterity;</b>
+<b class="fc">&nbsp;		this.constitution = constitution;</b>
+<b class="fc">&nbsp;		this.intelligence = intelligence;</b>
+<b class="fc">&nbsp;		this.wisdom = wisdom;</b>
+<b class="fc">&nbsp;		this.charisma = charisma;</b>
+<b class="fc">&nbsp;		this.expPoints = expPoints;</b>
+<b class="fc">&nbsp;		this.level = getlevel();</b>
+<b class="fc">&nbsp;		this.gender = gender;</b>
+<b class="fc">&nbsp;		this.description = description;</b>
+<b class="fc">&nbsp;		this.dndClass = dndClass;</b>
+<b class="fc">&nbsp;		this.race = race;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void addExp(int exp) {
+<b class="fc">&nbsp;		this.expPoints = expPoints + exp;</b>
+<b class="fc">&nbsp;		if (this.expPoints &gt;= 1000 * level)</b>
+<b class="fc">&nbsp;			this.level = ((this.expPoints) / 1000) + 1;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public String getName() {
+<b class="fc">&nbsp;		return this.name;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getID() {
+<b class="fc">&nbsp;		return this.ID;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public String getGender() {
+<b class="fc">&nbsp;		return this.gender;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public String getDescription() {
+<b class="fc">&nbsp;		return this.description;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public DnDClass getdndClass() {
+<b class="fc">&nbsp;		return this.dndClass;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public Race getRace() {
+<b class="fc">&nbsp;		return this.race;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getStrength() {
+<b class="fc">&nbsp;		return this.strength;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getDexterity() {
+<b class="fc">&nbsp;		return this.dexterity;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getConsitution() {
+<b class="fc">&nbsp;		return this.constitution;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getIntelligence() {
+<b class="fc">&nbsp;		return this.intelligence;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getWisdom() {
+<b class="fc">&nbsp;		return this.wisdom;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getCharisma() {
+<b class="fc">&nbsp;		return this.charisma;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getStrengthModifier() {
+<b class="fc">&nbsp;		return getModifier(this.strength);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getDexterityModifier() {
+<b class="fc">&nbsp;		return getModifier(this.dexterity);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getConsitutionModifier() {
+<b class="fc">&nbsp;		return getModifier(this.constitution);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getIntelligenceModifier() {
+<b class="fc">&nbsp;		return getModifier(this.intelligence);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getWisdomModifier() {
+<b class="fc">&nbsp;		return getModifier(this.wisdom);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getCharismaModifier() {
+<b class="fc">&nbsp;		return getModifier(this.charisma);</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	private int getModifier(int ability) {
+<b class="fc">&nbsp;		if (ability % 2 != 0) {</b>
+<b class="fc">&nbsp;			return getModifier(ability - 1);</b>
+&nbsp;		}
+<b class="fc">&nbsp;		return (ability - 10) / 2;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getlevel() {
+<b class="fc">&nbsp;		this.level = ((this.expPoints) / 1000) + 1;</b>
+<b class="fc">&nbsp;		return level;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public int getExp(){
+<b class="fc">&nbsp;		return this.expPoints;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setName(String name) {
+<b class="fc">&nbsp;		this.name = name;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setID(int ID) {
+<b class="fc">&nbsp;		this.ID = ID;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setGender(String gender) {
+<b class="fc">&nbsp;		this.gender = gender;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setDescription(String description) {
+<b class="fc">&nbsp;		this.description = description;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setdndClass(DnDClass dndClass) {
+<b class="fc">&nbsp;		this.dndClass = dndClass;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setRace(Race race) {
+<b class="fc">&nbsp;		this.race = race;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setStrength(int strength) {
+<b class="fc">&nbsp;		this.strength = strength;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setDexterity(int dexterity) {
+<b class="fc">&nbsp;		this.dexterity = dexterity;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setConstitution(int constitution) {
+<b class="fc">&nbsp;		this.constitution = constitution;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setIntelligence(int intelligence) {
+<b class="fc">&nbsp;		this.intelligence = intelligence;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setWisdom(int wisdom) {
+<b class="fc">&nbsp;		this.wisdom = wisdom;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setCharisma(int charisma) {
+<b class="fc">&nbsp;		this.charisma = charisma;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;	public void setExpPoints(int exp) {
+<b class="nc">&nbsp;		this.expPoints = exp;</b>
+&nbsp;	}
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-04 21:43</div>
+</div>
+</body>
+</html>

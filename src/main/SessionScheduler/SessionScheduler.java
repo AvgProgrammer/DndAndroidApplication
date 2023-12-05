@@ -1,9 +1,8 @@
+package SessionScheduler;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 public class SessionScheduler {
     private String sender,description,location,time;
@@ -35,7 +34,21 @@ public class SessionScheduler {
     public void setTime(String Time){
         this.time=Time;
     }
-    public void sendEmail(){
-        System.out.println("Email was sent");
+    public String sendEmail(){
+        String message="From:"+sender+"\n";
+        String x="";
+        for(int i=0;i<Recipients.size();i++){
+            if(i==0){
+                x= Recipients.get(i);
+            }else{
+                x=x+","+Recipients.get(i);
+            }
+        }
+        message=message+"To:"+x+"\n";
+        message=message+"Date:"+Date+"\n";
+        message=message+"Time:"+time+"\n";
+        message=message+"Location:"+location+"\n";
+        message=message+description;
+        return message;
     }
 }
