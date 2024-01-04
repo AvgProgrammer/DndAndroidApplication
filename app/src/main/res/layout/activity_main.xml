@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#915353"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  DnD Player’s Companion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColorHighlight="#D8B51111"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <Button
+        android:id="@+id/SessionsButton"
+        android:layout_width="118dp"
+        android:layout_height="47dp"
+        android:text="Sessions"
+        app:layout_constraintBottom_toTopOf="@+id/CharactersButton"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.771" />
+
+    <Button
+        android:id="@+id/CharactersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Characters"
+        app:layout_constraintBottom_toTopOf="@+id/QuitButton"
+        app:layout_constraintEnd_toEndOf="@+id/SessionsButton"
+        app:layout_constraintStart_toStartOf="@+id/SessionsButton" />
+
+    <Button
+        android:id="@+id/QuitButton"
+        android:layout_width="112dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="300dp"
+        android:text="Exit"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/CharactersButton"
+        app:layout_constraintStart_toStartOf="@+id/CharactersButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

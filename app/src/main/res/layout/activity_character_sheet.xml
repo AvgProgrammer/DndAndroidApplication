@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".CharacterSheetActivity">
+
+    <EditText
+        android:id="@+id/CharacterNameText"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/WisdomText"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Wis"
+        app:layout_constraintBottom_toBottomOf="@+id/DexterityText"
+        app:layout_constraintStart_toEndOf="@+id/DexterityText"
+        app:layout_constraintTop_toTopOf="@+id/DexterityText" />
+
+    <EditText
+        android:id="@+id/DexterityText"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:text="Dex"
+        app:layout_constraintBottom_toBottomOf="@+id/StrengthText"
+        app:layout_constraintStart_toEndOf="@+id/StrengthText"
+        app:layout_constraintTop_toTopOf="@+id/StrengthText" />
+
+    <EditText
+        android:id="@+id/ConstitutionText"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Con"
+        app:layout_constraintBottom_toBottomOf="@+id/CharismaText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toEndOf="@+id/CharismaText"
+        app:layout_constraintTop_toTopOf="@+id/CharismaText" />
+
+    <EditText
+        android:id="@+id/StrengthText"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:text="Str"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59000003" />
+
+    <EditText
+        android:id="@+id/CharismaText"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Char"
+        app:layout_constraintBottom_toBottomOf="@+id/IntelligenceText"
+        app:layout_constraintStart_toEndOf="@+id/IntelligenceText"
+        app:layout_constraintTop_toTopOf="@+id/IntelligenceText" />
+
+    <EditText
+        android:id="@+id/IntelligenceText"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Int"
+        app:layout_constraintBottom_toBottomOf="@+id/WisdomText"
+        app:layout_constraintStart_toEndOf="@+id/WisdomText"
+        app:layout_constraintTop_toTopOf="@+id/WisdomText" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="269dp"
+        android:layout_height="51dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroup3"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88">
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="#4D4AA636" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:text="Bard"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="88dp"
+            android:layout_height="match_parent"
+            android:text="Fighter"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:text="Wizzard"
+            android:textColor="#000000" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="269dp"
+        android:layout_height="51dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroup2"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58000004">
+
+        <RadioButton
+            android:id="@+id/radioButton10"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:text="Dward"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:text="Elf"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/radioButton12"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:text="Human"
+            android:textColor="#000000" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="54dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="80dp"
+        android:background="#FFFFFF"
+        android:text="Class"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="54dp"
+        android:layout_height="25dp"
+
+        android:layout_marginTop="60dp"
+        android:background="#FFFFFF"
+        android:text="Race"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="269dp"
+        android:layout_height="51dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CharacterNameText"
+        app:layout_constraintVertical_bias="0.48000002">
+
+        <RadioButton
+            android:id="@+id/radioButton14"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="Male"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/radioButton15"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Female"
+            android:textColor="#000000" />
+
+        <RadioButton
+            android:id="@+id/radioButton16"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Non-Binary"
+            android:textColor="#000000" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="54dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="116dp"
+        android:background="#FFFFFF"
+        android:text="Gender"
+        android:textColor="#0B0A0A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/DescriptionText"
+        android:layout_width="279dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
+
+    <Button
+        android:id="@+id/ReturnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:text="Return"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.362"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
