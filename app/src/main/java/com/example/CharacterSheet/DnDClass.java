@@ -1,6 +1,8 @@
-package CharacterSheet;
+package com.example.CharacterSheet;
 
-public enum DnDClass {
+import java.io.Serializable;
+
+public enum DnDClass  implements Serializable {
     Bard,
     Fighter,
     Wizard

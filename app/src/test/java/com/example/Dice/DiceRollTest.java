@@ -1,21 +1,21 @@
-package Dice;
+package com.example.Dice;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
 
-class DiceRollTest {
+public class DiceRollTest {
     DiceRoll roll;
-    Dice.IDiceRNG rng = new DiceRNGStub();
+    IDiceRNG rng = new DiceRNGStub();
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         roll=new DiceRoll();
         roll.setDiceRNG(rng);
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         roll = null;
     }
@@ -80,7 +80,7 @@ class DiceRollTest {
 
     @Test
     public void checkResultRange(){
-        Dice.IDiceRNG testRNG = new Dice.DiceRNGImpl();
+        IDiceRNG testRNG = new DiceRNGImpl();
         roll.setDiceRNG(testRNG);
         roll.roll();
         int result=roll.getResult();

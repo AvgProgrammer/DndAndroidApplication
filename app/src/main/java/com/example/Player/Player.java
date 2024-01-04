@@ -1,13 +1,15 @@
-package Player;
+package com.example.Player;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import CharacterSheet.CharacterSheet;
-import Session.Session;
-import SessionScheduler.SessionScheduler;
+import com.example.CharacterSheet.CharacterSheet;
+import com.example.Session.Session;
+import com.example.SessionScheduler.SessionScheduler;
 
 
-public class Player {
+public class Player implements Serializable {
+
 
     private String name, email, password;
         private ArrayList<CharacterSheet> characters;

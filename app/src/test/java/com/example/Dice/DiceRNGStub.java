@@ -1,6 +1,4 @@
-package Dice;
-
-import Dice.IDiceRNG;
+package com.example.Dice;
 
 public class DiceRNGStub implements IDiceRNG {
     @Override

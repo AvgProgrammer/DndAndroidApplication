@@ -1,25 +1,25 @@
-package Player;
+package com.example.Player;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
-import Session.Session;
-import CharacterSheet.*;
+import org.junit.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.After;
+import com.example.Session.Session;
+import com.example.CharacterSheet.*;
 
 public class PlayerTest {
 
     private Player player;
 
-    @BeforeEach
+    @Before
     public void setUp() {
         player = new Player("John Doe", "john@example.com", "password123");
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         player = null;
     }
@@ -27,19 +27,19 @@ public class PlayerTest {
     @Test
     public void testSetName() {
         player.setName("Alice");
-        Assertions.assertEquals("Alice", player.GetName());
+        Assert.assertEquals("Alice", player.GetName());
     }
 
     @Test
     public void testSetPassword() {
         player.setPassword("newpassword");
-        Assertions.assertEquals("newpassword", player.GetPassword());
+        Assert.assertEquals("newpassword", player.GetPassword());
     }
 
     @Test
     public void testSetEmail() {
         player.setEmail("alice@example.com");
-        Assertions.assertEquals("alice@example.com", player.GetEmail());
+        Assert.assertEquals("alice@example.com", player.GetEmail());
     }
 
     @Test
@@ -57,6 +57,6 @@ public class PlayerTest {
     public void testAddSession() {
         Session session = new Session();
         player.AddSession(session);
-        Assertions.assertTrue(player.getSessions().contains(session));
+        Assert.assertTrue(player.getSessions().contains(session));
     }
 }

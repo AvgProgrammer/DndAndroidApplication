@@ -1,26 +1,26 @@
-package SessionScheduler;
+package com.example. SessionScheduler;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-import SessionScheduler.SessionScheduler;
+import com.example.SessionScheduler.SessionScheduler;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-class SessionSchedulerTest {
+public class SessionSchedulerTest {
 
     private SessionScheduler session;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         session= new SessionScheduler();
     }
 
-    @AfterEach
-    void tearDown() {
+    @After
+    public void tearDown() {
         session=null;
     }
 
@@ -39,6 +39,6 @@ class SessionSchedulerTest {
         session.setLocation("Athens");
         session.setDescription("description");
         String expectedOutput="From:John\n"+"To:a,b,c,d\n"+"Date:2021-01-07\n"+"Time:20:30\n"+"Location:Athens\n"+"description";
-        Assertions.assertEquals(expectedOutput, session.sendEmail());
+        Assert.assertEquals(expectedOutput, session.sendEmail());
     }
 }

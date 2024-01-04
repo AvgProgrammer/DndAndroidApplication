@@ -1,11 +1,12 @@
-package Session;
+package com.example.Session;
 
-import Dice.DiceRoll;
-import CharacterSheet.CharacterSheet;
+import com.example.Dice.DiceRoll;
+import com.example.CharacterSheet.CharacterSheet;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Session {
+public class Session  implements Serializable {
     private int id;
     private CharacterSheet characterSheet;
     private ArrayList<DiceRoll> diceRolls;

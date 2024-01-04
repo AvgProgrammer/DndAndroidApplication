@@ -1,6 +1,8 @@
-package CharacterSheet;
+package com.example.CharacterSheet;
 
-public class CharacterSheet {
+import java.io.Serializable;
+
+public class CharacterSheet  implements Serializable {
 
 	private String name, gender, description;
 	private int ID, level, expPoints;

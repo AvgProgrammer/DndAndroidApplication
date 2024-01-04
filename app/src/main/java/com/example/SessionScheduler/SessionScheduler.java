@@ -1,10 +1,11 @@
-package SessionScheduler;
+package com.example.SessionScheduler;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SessionScheduler {
+public class SessionScheduler  implements Serializable {
     private String sender,description,location,time;
     private List<String> Recipients;
     private LocalDate Date;

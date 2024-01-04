@@ -1,26 +1,26 @@
-package Session;
+package com.example.Session;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import CharacterSheet.CharacterSheet;
-import Dice.DiceRoll;
-import Session.Session;
+import com.example.CharacterSheet.CharacterSheet;
+import com.example.Dice.DiceRoll;
+import com.example.Session.Session;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
 
 import java.util.ArrayList;
 
-class SessionTest {
+public class SessionTest {
     Session session;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         this.session = new Session();
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         session = null;
     }

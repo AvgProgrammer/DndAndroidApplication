@@ -1,29 +1,30 @@
-package Dice;
+package com.example.Dice;
+
 
 public class DiceRoll {
     private int result;
     private int modifier;
     private String description;
-    private Dice.IDiceRNG diceRNG;
+    private IDiceRNG diceRNG;
 
     public DiceRoll() {
         this.modifier = 0;
         this.description = "D20";
-        this.diceRNG=new Dice.DiceRNGImpl();
+        this.diceRNG=new DiceRNGImpl();
         roll();
     }
 
     public DiceRoll(int modifier) {
         this.modifier = modifier;
         this.description = "D20 + " + modifier;
-        this.diceRNG=new Dice.DiceRNGImpl();
+        this.diceRNG=new DiceRNGImpl();
         roll();
     }
 
     public DiceRoll(int modifier, String description) {
         this.modifier = modifier;
         this.description = description;
-        this.diceRNG=new Dice.DiceRNGImpl();
+        this.diceRNG=new DiceRNGImpl();
         roll();
     }
 

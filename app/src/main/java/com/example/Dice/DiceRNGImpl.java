@@ -1,4 +1,4 @@
-package Dice;
+package com.example.Dice;
 
 public class DiceRNGImpl implements IDiceRNG {
     private final int MIN_ROLL = 1;

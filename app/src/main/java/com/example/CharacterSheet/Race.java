@@ -1,6 +1,8 @@
-package CharacterSheet;
+package com.example.CharacterSheet;
 
-public enum Race {
+import java.io.Serializable;
+
+public enum Race  implements Serializable {
     Dwarf,
     Elf,
     Human
