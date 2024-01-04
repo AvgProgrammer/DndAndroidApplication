@@ -37,7 +37,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Wis"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/DexterityText"
         app:layout_constraintStart_toEndOf="@+id/DexterityText"
         app:layout_constraintTop_toTopOf="@+id/DexterityText" />
@@ -49,6 +49,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Dex"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/StrengthText"
         app:layout_constraintStart_toEndOf="@+id/StrengthText"
         app:layout_constraintTop_toTopOf="@+id/StrengthText" />
@@ -74,6 +75,7 @@
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Str"
+        android:inputType="number"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +89,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Char"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/IntelligenceText"
         app:layout_constraintStart_toEndOf="@+id/IntelligenceText"
         app:layout_constraintTop_toTopOf="@+id/IntelligenceText" />
@@ -99,7 +101,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Int"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/WisdomText"
         app:layout_constraintStart_toEndOf="@+id/WisdomText"
         app:layout_constraintTop_toTopOf="@+id/WisdomText" />
@@ -115,7 +117,7 @@
         app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="@+id/radioGroup3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88">
+        app:layout_constraintVertical_bias="0.87">
 
 
         <TextView
@@ -126,21 +128,21 @@
             android:text="#4D4AA636" />
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/Bard"
             android:layout_width="89dp"
             android:layout_height="match_parent"
             android:text="Bard"
             android:textColor="#000000" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/Fighter"
             android:layout_width="88dp"
             android:layout_height="match_parent"
             android:text="Fighter"
             android:textColor="#000000" />
 
         <RadioButton
-            android:id="@+id/radioButton9"
+            android:id="@+id/Wizard"
             android:layout_width="95dp"
             android:layout_height="match_parent"
             android:text="Wizard"
@@ -161,21 +163,21 @@
         app:layout_constraintVertical_bias="0.58000004">
 
         <RadioButton
-            android:id="@+id/radioButton10"
+            android:id="@+id/Dwarf"
             android:layout_width="89dp"
             android:layout_height="match_parent"
             android:text="Dward"
             android:textColor="#000000" />
 
         <RadioButton
-            android:id="@+id/radioButton11"
+            android:id="@+id/Elf"
             android:layout_width="85dp"
             android:layout_height="match_parent"
             android:text="Elf"
             android:textColor="#000000" />
 
         <RadioButton
-            android:id="@+id/radioButton12"
+            android:id="@+id/Human"
             android:layout_width="95dp"
             android:layout_height="match_parent"
             android:text="Human"
@@ -186,7 +188,7 @@
         android:id="@+id/textView"
         android:layout_width="54dp"
         android:layout_height="25dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="76dp"
         android:background="#FFFFFF"
         android:text="Class"
         android:textColor="#000000"
@@ -200,7 +202,7 @@
         android:layout_width="54dp"
         android:layout_height="25dp"
 
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="76dp"
         android:background="#FFFFFF"
         android:text="Race"
         android:textColor="#000000"
@@ -222,21 +224,21 @@
         app:layout_constraintVertical_bias="0.48000002">
 
         <RadioButton
-            android:id="@+id/radioButton14"
+            android:id="@+id/male"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:text="Male"
             android:textColor="#000000" />
 
         <RadioButton
-            android:id="@+id/radioButton15"
+            android:id="@+id/female"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Female"
             android:textColor="#000000" />
 
         <RadioButton
-            android:id="@+id/radioButton16"
+            android:id="@+id/NonBinary"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Non-Binary"
