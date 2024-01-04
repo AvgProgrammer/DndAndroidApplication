@@ -61,7 +61,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Con"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/CharismaText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.173"
@@ -107,15 +107,15 @@
         app:layout_constraintTop_toTopOf="@+id/WisdomText" />
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/rgClass"
         android:layout_width="269dp"
         android:layout_height="51dp"
         android:background="#FFFFFF"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="@+id/radioGroup3"
+        app:layout_constraintBottom_toTopOf="@+id/rgRace"
+        app:layout_constraintEnd_toEndOf="@id/rgGender"
         app:layout_constraintHorizontal_bias="0.26"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup3"
+        app:layout_constraintStart_toStartOf="@id/rgGender"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.87">
 
@@ -150,15 +150,15 @@
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rgRace"
         android:layout_width="269dp"
         android:layout_height="51dp"
         android:background="#FFFFFF"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/AddCharacter"
-        app:layout_constraintEnd_toEndOf="@+id/radioGroup2"
+        app:layout_constraintEnd_toEndOf="@+id/rgClass"
         app:layout_constraintHorizontal_bias="0.29"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup2"
+        app:layout_constraintStart_toStartOf="@+id/rgClass"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.58000004">
 
@@ -212,12 +212,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <RadioGroup
-        android:id="@+id/radioGroup3"
+        android:id="@+id/rgGender"
         android:layout_width="269dp"
         android:layout_height="51dp"
         android:background="#FFFFFF"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+        app:layout_constraintBottom_toTopOf="@+id/rgClass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CharacterNameText"
