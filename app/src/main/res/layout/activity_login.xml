@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/RegisterName"
         android:layout_width="215dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -19,17 +19,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/RegisterPassword"
         android:layout_width="213dp"
         android:layout_height="52dp"
         android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="@+id/RegisterName"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintStart_toStartOf="@+id/RegisterName"
+        app:layout_constraintTop_toBottomOf="@+id/RegisterName" />
 
     <Button
         android:id="@+id/SingIn"
