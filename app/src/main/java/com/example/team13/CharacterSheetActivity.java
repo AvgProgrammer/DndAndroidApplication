@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.CharacterSheet.CharacterSheet;
 import com.example.CharacterSheet.DnDClass;
@@ -17,6 +18,8 @@ public class CharacterSheetActivity extends AppCompatActivity {
 
     protected Button ReturnButton,AddCharacter;
     protected EditText CharacterNameText,DescriptionText,StrengthText,DexterityText,IntelligenceText,WisdomText,CharismaText,ConstitutionText;
+
+    protected TextView txtNameWrn,txtStatsWrn,txtDescWrn;
     protected RadioGroup rgGender,rgRace,rgClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,47 +32,47 @@ public class CharacterSheetActivity extends AppCompatActivity {
         addCharacter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(validInput()==true) {
 
-                CharacterSheet characterSheet=new CharacterSheet();
 
-                characterSheet.setName(CharacterNameText.getText().toString());
-                characterSheet.setDescription(DescriptionText.getText().toString());
+                    CharacterSheet characterSheet = new CharacterSheet();
 
-                characterSheet.setStrength(Integer.parseInt(StrengthText.getText().toString()));
-                characterSheet.setDexterity(Integer.parseInt(DexterityText.getText().toString()));
-                characterSheet.setWisdom(Integer.parseInt(WisdomText.getText().toString()));
-                characterSheet.setIntelligence(Integer.parseInt(IntelligenceText.getText().toString()));
-                characterSheet.setCharisma(Integer.parseInt(CharismaText.getText().toString()));
-                characterSheet.setConstitution(Integer.parseInt(ConstitutionText.getText().toString()));
+                    characterSheet.setName(CharacterNameText.getText().toString());
+                    characterSheet.setDescription(DescriptionText.getText().toString());
 
-                int checkedId = rgGender.getCheckedRadioButtonId();
-                if(checkedId==R.id.male){
-                    characterSheet.setGender("Male");
-                }else if(checkedId==R.id.female){
-                    characterSheet.setGender("Female");
-                }
-                else if(checkedId==R.id.NonBinary){
-                    characterSheet.setGender("Non Binary");
-                }
-               checkedId = rgClass.getCheckedRadioButtonId();
-                if(checkedId==R.id.Bard){
-                    characterSheet.setdndClass(DnDClass.Bard);
-                }else if(checkedId==R.id.Fighter){
-                    characterSheet.setdndClass(DnDClass.Fighter);
-                }
-                else if(checkedId==R.id.Wizard){
-                    characterSheet.setdndClass(DnDClass.Wizard);
-                }
-                checkedId = rgRace.getCheckedRadioButtonId();
-                if(checkedId==R.id.Dwarf){
-                    characterSheet.setRace(Race.Dwarf);
-                }else if(checkedId==R.id.Elf){
-                    characterSheet.setRace(Race.Elf);
-                }
-                else if(checkedId==R.id.Human){
-                    characterSheet.setRace(Race.Human);
-                }
+                    characterSheet.setStrength(Integer.parseInt(StrengthText.getText().toString()));
+                    characterSheet.setDexterity(Integer.parseInt(DexterityText.getText().toString()));
+                    characterSheet.setWisdom(Integer.parseInt(WisdomText.getText().toString()));
+                    characterSheet.setIntelligence(Integer.parseInt(IntelligenceText.getText().toString()));
+                    characterSheet.setCharisma(Integer.parseInt(CharismaText.getText().toString()));
+                    characterSheet.setConstitution(Integer.parseInt(ConstitutionText.getText().toString()));
 
+                    int checkedId = rgGender.getCheckedRadioButtonId();
+                    if (checkedId == R.id.male) {
+                        characterSheet.setGender("Male");
+                    } else if (checkedId == R.id.female) {
+                        characterSheet.setGender("Female");
+                    } else if (checkedId == R.id.NonBinary) {
+                        characterSheet.setGender("Non Binary");
+                    }
+                    checkedId = rgClass.getCheckedRadioButtonId();
+                    if (checkedId == R.id.Bard) {
+                        characterSheet.setdndClass(DnDClass.Bard);
+                    } else if (checkedId == R.id.Fighter) {
+                        characterSheet.setdndClass(DnDClass.Fighter);
+                    } else if (checkedId == R.id.Wizard) {
+                        characterSheet.setdndClass(DnDClass.Wizard);
+                    }
+                    checkedId = rgRace.getCheckedRadioButtonId();
+                    if (checkedId == R.id.Dwarf) {
+                        characterSheet.setRace(Race.Dwarf);
+                    } else if (checkedId == R.id.Elf) {
+                        characterSheet.setRace(Race.Elf);
+                    } else if (checkedId == R.id.Human) {
+                        characterSheet.setRace(Race.Human);
+                    }
+                    removeWrn();
+                }
             }
         });
 
@@ -83,38 +86,60 @@ public class CharacterSheetActivity extends AppCompatActivity {
         });
 
     }
-    private int validInput(){
-        int x=0;
-
-        if(CharacterNameText.getText().toString()==""){
-            x=1;
+    private void removeWrn(){
+        txtNameWrn.setVisibility(View.GONE);
+        txtDescWrn.setVisibility(View.GONE);
+        txtStatsWrn.setVisibility(View.GONE);
+    }
+    private boolean validInput(){
+            boolean returner=true;
+        if(CharacterNameText.getText().toString().equals("")){
+                txtNameWrn.setVisibility(View.VISIBLE);
+                txtNameWrn.setText("Enter Name");
+                returner=false;
         }
-        if(DescriptionText.getText().toString()==""){
-            x=1;
-        }
-
-
-        if(Integer.parseInt(StrengthText.getText().toString())<=0 && Integer.parseInt(StrengthText.getText().toString())>=31){
-
-        }
-        if(Integer.parseInt(DexterityText.getText().toString())<=0 && Integer.parseInt(DexterityText.getText().toString())>=31){
-
-        }
-        if(Integer.parseInt(WisdomText.getText().toString())<=0 && Integer.parseInt(WisdomText.getText().toString())>=31){
-
-        }
-        if(Integer.parseInt(IntelligenceText.getText().toString())<=0 && Integer.parseInt(IntelligenceText.getText().toString())>=31){
-
-        }
-        if(Integer.parseInt(CharismaText.getText().toString())<=0 && Integer.parseInt(CharismaText.getText().toString())>=31){
-
-        }
-        if(Integer.parseInt(ConstitutionText.getText().toString())<=0 && Integer.parseInt(ConstitutionText.getText().toString())>=31){
-
+        if(DescriptionText.getText().toString().equals("")){
+            txtDescWrn.setVisibility(View.VISIBLE);
+            txtDescWrn.setText("Enter Description");
+            returner=false;
         }
 
 
-        return x;
+        if(StrengthText.getText().toString().equals("") ||
+            DexterityText.getText().toString().equals("") ||
+            WisdomText.getText().toString().equals("") ||
+            IntelligenceText.getText().toString().equals("") ||
+            CharismaText.getText().toString().equals("") ||
+            ConstitutionText.getText().toString().equals("")
+        ){
+            txtStatsWrn.setVisibility(View.VISIBLE);
+            txtStatsWrn.setText("Stats missing");
+            returner=false;
+        }
+
+        if(!StrengthText.getText().toString().equals("") &&
+            !DexterityText.getText().toString().equals("") &&
+            !WisdomText.getText().toString().equals("") &&
+            !IntelligenceText.getText().toString().equals("") &&
+            !CharismaText.getText().toString().equals("") &&
+            !ConstitutionText.getText().toString().equals("")
+
+        ){
+            if( (Integer.parseInt(StrengthText.getText().toString())<=0 || Integer.parseInt(StrengthText.getText().toString())>=31) ||
+                (Integer.parseInt(DexterityText.getText().toString())<=0 || Integer.parseInt(DexterityText.getText().toString())>=31) ||
+                (Integer.parseInt(WisdomText.getText().toString())<=0 || Integer.parseInt(WisdomText.getText().toString())>=31) ||
+                (Integer.parseInt(IntelligenceText.getText().toString())<=0 || Integer.parseInt(IntelligenceText.getText().toString())>=31) ||
+                (Integer.parseInt(CharismaText.getText().toString())<=0 || Integer.parseInt(CharismaText.getText().toString())>=31) ||
+                (Integer.parseInt(ConstitutionText.getText().toString())<=0 || Integer.parseInt(ConstitutionText.getText().toString())>=31)
+            ){
+                txtStatsWrn.setVisibility(View.VISIBLE);
+                txtStatsWrn.setText("Incorrect Values");
+                returner=false;
+        }
+        }
+
+
+        return  returner;
     }
     private void initViews(){
         ReturnButton = findViewById(R.id.ReturnButton);
@@ -133,5 +158,8 @@ public class CharacterSheetActivity extends AppCompatActivity {
         rgClass=findViewById(R.id.rgClass);
         rgRace=findViewById(R.id.rgRace);
 
+        txtNameWrn=findViewById(R.id.txtNameWrn);
+        txtStatsWrn=findViewById(R.id.txtStatsWrn);
+        txtDescWrn=findViewById(R.id.txtDescWrn);
     }
 }

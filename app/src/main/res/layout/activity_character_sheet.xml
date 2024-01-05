@@ -72,7 +72,7 @@
         android:id="@+id/StrengthText"
         android:layout_width="50dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:hint="Str"
         android:inputType="number"
@@ -80,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59000003" />
+        app:layout_constraintVertical_bias="0.644" />
 
     <EditText
         android:id="@+id/CharismaText"
@@ -117,7 +117,7 @@
         app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="@id/rgGender"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.87">
+        app:layout_constraintVertical_bias="0.82">
 
 
         <TextView
@@ -131,6 +131,7 @@
             android:id="@+id/Bard"
             android:layout_width="89dp"
             android:layout_height="match_parent"
+            android:checked="true"
             android:text="Bard"
             android:textColor="#000000" />
 
@@ -160,12 +161,13 @@
         app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="@+id/rgClass"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58000004">
+        app:layout_constraintVertical_bias="0.56">
 
         <RadioButton
             android:id="@+id/Dwarf"
             android:layout_width="89dp"
             android:layout_height="match_parent"
+            android:checked="true"
             android:text="Dward"
             android:textColor="#000000" />
 
@@ -188,12 +190,12 @@
         android:id="@+id/textView"
         android:layout_width="54dp"
         android:layout_height="25dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="68dp"
         android:background="#FFFFFF"
         android:text="Class"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -202,12 +204,12 @@
         android:layout_width="54dp"
         android:layout_height="25dp"
 
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="68dp"
         android:background="#FFFFFF"
         android:text="Race"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -219,7 +221,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/rgClass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/CharacterNameText"
         app:layout_constraintVertical_bias="0.48000002">
 
@@ -227,6 +230,7 @@
             android:id="@+id/male"
             android:layout_width="80dp"
             android:layout_height="match_parent"
+            android:checked="true"
             android:text="Male"
             android:textColor="#000000" />
 
@@ -249,7 +253,7 @@
         android:id="@+id/textView3"
         android:layout_width="54dp"
         android:layout_height="25dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="124dp"
         android:background="#FFFFFF"
         android:text="Gender"
         android:textColor="#0B0A0A"
@@ -268,10 +272,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.806" />
 
     <Button
         android:id="@+id/ReturnButton"
@@ -283,5 +287,58 @@
         app:layout_constraintEnd_toStartOf="@+id/AddCharacter"
         app:layout_constraintHorizontal_bias="0.362"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="74dp" />
+
+    <TextView
+        android:id="@+id/txtStatsWrn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="312dp"
+        android:text="TextView"
+        android:textColor="#EC0B0B"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtNameWrn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="#EC0B0B"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtDescWrn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        android:textColor="#EC0B0B"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/DescriptionText"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
