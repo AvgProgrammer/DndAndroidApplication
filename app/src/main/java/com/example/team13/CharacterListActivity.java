@@ -2,28 +2,46 @@ package com.example.team13;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class CharacterListActivity extends AppCompatActivity {
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResult;
 
+import com.example.CharacterSheet.CharacterSheet;
+import com.example.Player.Player;
+
+import java.util.ArrayList;
+
+public class CharacterListActivity extends AppCompatActivity {
     private Button AddButton,BackButton;
+
+    private ArrayList<CharacterSheet> CharList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_list);
 
+        Intent intent = getIntent();
+
+        if(intent.hasExtra("CharList")){
+            CharList = (ArrayList) intent.getSerializableExtra("CharList");
+        }
         initViews();
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(CharacterListActivity.this, CharacterSheetActivity.class);
-                startActivity(intent);
+                mStartForResult.launch(intent);
             }
         });
+
         Button BackButton = findViewById(R.id.BackButton);
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,4 +56,21 @@ public class CharacterListActivity extends AppCompatActivity {
         AddButton =findViewById(R.id.AddButton);
         BackButton=findViewById(R.id.BackButton);
     }
+    private ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null) {
+                            // Retrieve the CharacterSheet object
+                            CharacterSheet newCharacter = (CharacterSheet) data.getSerializableExtra("newCharacter");
+
+                            // Add the new character to the ArrayList
+
+                        }
+                    }
+                }
+            });
 }

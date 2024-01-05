@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity{
 
     private Button SessionsButton,CharactersButton,QuitButton;
     private Player player;
-    ArrayList<CharacterSheet> Chars=new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity{
         if (intent.hasExtra("Player")) {
 
             player = (Player) intent.getSerializableExtra("Player");}
-        ArrayList<CharacterSheet> Chars=new ArrayList<>();
-        ArrayList<Session> Sess=new ArrayList<>();
+            ArrayList<CharacterSheet> Chars=new ArrayList<>();
+            ArrayList<Session> Sess=new ArrayList<>();
 
             initViews();
         CharactersButton.setOnClickListener(new View.OnClickListener() {
