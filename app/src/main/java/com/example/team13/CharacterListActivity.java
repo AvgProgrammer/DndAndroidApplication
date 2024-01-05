@@ -67,6 +67,7 @@ public class CharacterListActivity extends AppCompatActivity {
                             // Retrieve the CharacterSheet object
                             CharacterSheet newCharacter = (CharacterSheet) data.getSerializableExtra("newCharacter");
 
+                            CharList.add(newCharacter);
                             // Add the new character to the ArrayList
 
                         }

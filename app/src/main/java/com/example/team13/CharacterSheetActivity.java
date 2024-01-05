@@ -2,6 +2,7 @@ package com.example.team13;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -71,6 +72,7 @@ public class CharacterSheetActivity extends AppCompatActivity {
                     } else if (checkedId == R.id.Human) {
                         characterSheet.setRace(Race.Human);
                     }
+                    onCharacterCreated(characterSheet);
                     removeWrn();
                 }
             }
@@ -85,6 +87,20 @@ public class CharacterSheetActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void onCharacterCreated(CharacterSheet newCharacter) {
+        // Create an Intent to send the result back
+        Intent returnIntent = new Intent();
+
+        // Assuming CharacterSheet is serializable or parcelable.
+        // If not, you will need to break down the object into primitives or implement Serializable or Parcelable in the CharacterSheet class.
+        returnIntent.putExtra("newCharacter", newCharacter);
+
+        // Set the result with the Intent
+        setResult(RESULT_OK, returnIntent);
+
+        // Finish the activity
+        finish();
     }
     private void removeWrn(){
         txtNameWrn.setVisibility(View.GONE);
@@ -162,4 +178,6 @@ public class CharacterSheetActivity extends AppCompatActivity {
         txtStatsWrn=findViewById(R.id.txtStatsWrn);
         txtDescWrn=findViewById(R.id.txtDescWrn);
     }
+
+
 }
