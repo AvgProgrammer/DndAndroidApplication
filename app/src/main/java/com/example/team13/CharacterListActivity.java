@@ -12,6 +12,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResult;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.CharacterSheet.CharacterSheet;
 import com.example.Player.Player;
@@ -20,8 +22,10 @@ import java.util.ArrayList;
 
 public class CharacterListActivity extends AppCompatActivity {
     private Button AddButton,BackButton;
-
+    protected RecyclerView CharactersList;
     private ArrayList<CharacterSheet> CharList;
+
+    private CharacterRecViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,8 @@ public class CharacterListActivity extends AppCompatActivity {
             CharList = (ArrayList) intent.getSerializableExtra("CharList");
         }
         initViews();
+
+
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +47,11 @@ public class CharacterListActivity extends AppCompatActivity {
                 mStartForResult.launch(intent);
             }
         });
+        adapter = new CharacterRecViewAdapter();
+        adapter.setCharacters(CharList);
 
+        CharactersList.setAdapter(adapter);
+        CharactersList.setLayoutManager(new LinearLayoutManager(this));
         Button BackButton = findViewById(R.id.BackButton);
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +65,7 @@ public class CharacterListActivity extends AppCompatActivity {
     private void initViews(){
         AddButton =findViewById(R.id.AddButton);
         BackButton=findViewById(R.id.BackButton);
+        CharactersList=findViewById(R.id.CharactersList);
     }
     private ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -68,8 +79,8 @@ public class CharacterListActivity extends AppCompatActivity {
                             CharacterSheet newCharacter = (CharacterSheet) data.getSerializableExtra("newCharacter");
 
                             CharList.add(newCharacter);
+                            adapter.notifyDataSetChanged();
                             // Add the new character to the ArrayList
-
                         }
                     }
                 }
