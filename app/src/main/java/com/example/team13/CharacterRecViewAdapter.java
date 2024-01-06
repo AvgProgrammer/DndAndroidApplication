@@ -1,5 +1,6 @@
 package com.example.team13;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,14 +21,13 @@ public class CharacterRecViewAdapter extends RecyclerView.Adapter<CharacterRecVi
 
     private ArrayList<CharacterSheet> characters=new ArrayList<CharacterSheet>();
     private Context mContext;
+    private ActivityResultLauncher<Intent> launcher;
 
-    public CharacterRecViewAdapter(Context mContext) {
+    public CharacterRecViewAdapter(Context mContext, ActivityResultLauncher<Intent> launcher) {
         this.mContext = mContext;
+        this.launcher = launcher;
     }
 
-    public CharacterRecViewAdapter(){
-
-    }
 
     @NonNull
     @Override
@@ -45,7 +46,7 @@ public class CharacterRecViewAdapter extends RecyclerView.Adapter<CharacterRecVi
                 public void onClick(View v) {
                     Intent intent=new Intent(mContext, PreviewSheet.class);
                     intent.putExtra("Character",characters.get(currentPosition));
-                    mContext.startActivity(intent);
+                    launcher.launch(intent);
                 }
             });
     }
@@ -64,7 +65,6 @@ public class CharacterRecViewAdapter extends RecyclerView.Adapter<CharacterRecVi
 
         private CardView Parent1;
         private TextView CharName;
-        private TextView DescChar;
         public ViewHolder1(@NonNull View itemView) {
             super(itemView);
             CharName= itemView.findViewById(R.id.CharName);

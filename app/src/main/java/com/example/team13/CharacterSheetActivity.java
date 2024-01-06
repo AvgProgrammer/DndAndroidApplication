@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -20,17 +21,95 @@ public class CharacterSheetActivity extends AppCompatActivity {
 
     protected Button ReturnButton,AddCharacter;
     protected EditText CharacterNameText,DescriptionText,StrengthText,DexterityText,IntelligenceText,WisdomText,CharismaText,ConstitutionText;
-
+    protected CharacterSheet EditableCharacter;
     protected TextView txtNameWrn,txtStatsWrn,txtDescWrn;
     protected RadioGroup rgGender,rgRace,rgClass;
+    protected RadioButton male,female,NonBinary,Bard,Fighter,Wizard,Dwarf,Elf,Human;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_sheet);
+        boolean checker=true;
+        Intent intent = getIntent();
+        if(intent.hasExtra("Checker")){
+           checker=intent.getBooleanExtra("Checker",true);
 
+        }
+        if(intent.hasExtra("EditChar")){
+            EditableCharacter=(CharacterSheet) intent.getSerializableExtra("EditChar");
+            Log.d("CharacterSheetActivity","EditableCharacterId:"+EditableCharacter.getID());
+        }
         initViews();
-
         Button addCharacter=findViewById(R.id.AddCharacter);
+
+        RadioButton M=findViewById(R.id.male);
+        RadioButton Fe=findViewById(R.id.female);
+        RadioButton N=findViewById(R.id.NonBinary);
+
+        RadioButton B=findViewById(R.id.Bard);
+        RadioButton Fi=findViewById(R.id.Fighter);
+        RadioButton W=findViewById(R.id.Wizard);
+
+        RadioButton D=findViewById(R.id.Dwarf);
+        RadioButton E=findViewById(R.id.Elf);
+        RadioButton H=findViewById(R.id.Human);
+        int number=-1;
+        if(checker==false && intent.hasExtra("EditChar")){
+
+            addCharacter.setText("Submit");
+            number=EditableCharacter.getID();
+            CharacterNameText.setText(EditableCharacter.getName());
+            DescriptionText.setText(EditableCharacter.getDescription());
+            StrengthText.setText(Integer.toString(EditableCharacter.getStrength()));
+            DexterityText.setText(Integer.toString(EditableCharacter.getDexterity()));
+            WisdomText.setText(Integer.toString(EditableCharacter.getWisdom()));
+            IntelligenceText.setText(Integer.toString(EditableCharacter.getIntelligence()));
+            CharismaText.setText(Integer.toString(EditableCharacter.getCharisma()));
+            ConstitutionText.setText(Integer.toString(EditableCharacter.getConsitution()));
+            int checkedId = rgGender.getCheckedRadioButtonId();
+            if (EditableCharacter.getGender().equals("Male")) {
+                    M.setChecked(true);
+                    Fe.setChecked(false);
+                    N.setChecked(false);
+            } else if (EditableCharacter.getGender().equals("Female")) {
+                    M.setChecked(false);
+                    Fe.setChecked(true);
+                    N.setChecked(false);
+            } else if (EditableCharacter.getGender().equals("Non Binary")) {
+                    M.setChecked(false);
+                    Fe.setChecked(false);
+                    N.setChecked(true);
+            }
+            if(DnDClass.Bard.equals(EditableCharacter.getdndClass())){
+                    B.setChecked(true);
+                    Fi.setChecked(false);
+                    W.setChecked(false);
+            } else if (DnDClass.Wizard.equals(EditableCharacter.getdndClass())) {
+                    B.setChecked(false);
+                    Fi.setChecked(false);
+                    W.setChecked(true);
+            } else if (DnDClass.Fighter.equals(EditableCharacter.getdndClass())) {
+                    B.setChecked(false);
+                    Fi.setChecked(true);
+                    W.setChecked(false);
+            }
+
+            if(Race.Dwarf.equals(EditableCharacter.getRace())){
+                    D.setChecked(true);
+                    E.setChecked(false);
+                    H.setChecked(false);
+            } else if (Race.Elf.equals(EditableCharacter.getRace())) {
+                    D.setChecked(false);
+                    E.setChecked(true);
+                    H.setChecked(false);
+            } else if (Race.Human.equals(EditableCharacter.getRace())) {
+                    D.setChecked(false);
+                    E.setChecked(false);
+                    H.setChecked(true);
+            }
+        }
+        int finalnumber=number;
+        boolean finalChecker = checker;
         addCharacter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +152,16 @@ public class CharacterSheetActivity extends AppCompatActivity {
                     } else if (checkedId == R.id.Human) {
                         characterSheet.setRace(Race.Human);
                     }
-                    onCharacterCreated(characterSheet);
+                    if (finalnumber!=-1){
+                        characterSheet.setID(finalnumber);
+                    }
+                    if(finalChecker ==true){
+                        Log.d("CharacterSheetActivity","Character Id:"+characterSheet.getID());
+                        onCharacterCreated(characterSheet);
+                    }else{
+                        Log.d("CharacterSheetActivity","Character Id:"+characterSheet.getID());
+                        onCharacterUpdated(characterSheet);
+                    }
                     removeWrn();
                 }
             }
@@ -103,6 +191,21 @@ public class CharacterSheetActivity extends AppCompatActivity {
         // Finish the activity
         finish();
     }
+    public void onCharacterUpdated(CharacterSheet newCharacter) {
+        // Create an Intent to send the result back
+        Intent returnIntent = new Intent();
+
+        // Assuming CharacterSheet is serializable or parcelable.
+        // If not, you will need to break down the object into primitives or implement Serializable or Parcelable in the CharacterSheet class.
+        returnIntent.putExtra("Nothing1", newCharacter);
+
+        // Set the result with the Intent
+        setResult(RESULT_OK, returnIntent);
+
+        // Finish the activity
+        finish();
+    }
+
     private void removeWrn(){
         txtNameWrn.setVisibility(View.GONE);
         txtDescWrn.setVisibility(View.GONE);
@@ -174,6 +277,18 @@ public class CharacterSheetActivity extends AppCompatActivity {
         rgGender=findViewById(R.id.rgGender);
         rgClass=findViewById(R.id.rgClass);
         rgRace=findViewById(R.id.rgRace);
+
+        male=findViewById(R.id.male);
+        female=findViewById(R.id.female);
+        NonBinary=findViewById(R.id.NonBinary);
+
+        Bard=findViewById(R.id.Bard);
+        Fighter=findViewById(R.id.Fighter);
+        Wizard=findViewById(R.id.Wizard);
+
+        Dwarf=findViewById(R.id.Dwarf);
+        Elf=findViewById(R.id.Elf);
+        Human=findViewById(R.id.Human);
 
         txtNameWrn=findViewById(R.id.txtNameWrn);
         txtStatsWrn=findViewById(R.id.txtStatsWrn);

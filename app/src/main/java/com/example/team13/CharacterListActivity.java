@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,6 +28,8 @@ public class CharacterListActivity extends AppCompatActivity {
 
     private CharacterRecViewAdapter adapter;
 
+    private static final int REQUEST_CODE_PREVIEW = 1001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,20 +41,19 @@ public class CharacterListActivity extends AppCompatActivity {
             CharList = (ArrayList) intent.getSerializableExtra("CharList");
         }
         initViews();
-
-
-        AddButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(CharacterListActivity.this, CharacterSheetActivity.class);
-                mStartForResult.launch(intent);
-            }
-        });
-        adapter = new CharacterRecViewAdapter(this);
+        adapter = new CharacterRecViewAdapter(this,mStartForResult);
         adapter.setCharacters(CharList);
 
         CharactersList.setAdapter(adapter);
         CharactersList.setLayoutManager(new LinearLayoutManager(this));
+        AddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(CharacterListActivity.this, CharacterSheetActivity.class);
+                intent.putExtra("Checker",true);
+                mStartForResult.launch(intent);
+            }
+        });
         Button BackButton = findViewById(R.id.BackButton);
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,13 +78,32 @@ public class CharacterListActivity extends AppCompatActivity {
                         Intent data = result.getData();
                         if (data != null) {
                             // Retrieve the CharacterSheet object
+
                             CharacterSheet newCharacter = (CharacterSheet) data.getSerializableExtra("newCharacter");
-                            newCharacter.setID(CharList.size());
-                            CharList.add(newCharacter);
-                            adapter.notifyDataSetChanged();
+                            if(newCharacter!=null){
+                                Log.d("CharacterListActivity", "Received new character: " + newCharacter.getName()+"/"+CharList.size());
+                                newCharacter.setID(CharList.size());
+                                Log.d("CharacterListActivity","New character Id:"+newCharacter.getID());
+                                CharList.add(newCharacter);
+                            }
                             // Add the new character to the ArrayList
+                            CharacterSheet updatedCharacter = (CharacterSheet) data.getSerializableExtra("updatedCharacter");
+                            if (updatedCharacter != null) {
+                                Log.d("CharacterListActivity", "Received updated character: " + updatedCharacter.getName());
+                                for(int i = 0; i < CharList.size(); i++){
+                                    Log.d("CharacterListActivity", "Edw eimai"+updatedCharacter.getID());
+                                    if (CharList.get(i).getID() == updatedCharacter.getID()) {
+                                        CharList.set(i, updatedCharacter);
+                                        Log.d("CharacterListActivity", "Add character to list: "+ updatedCharacter.getName()+","+CharList.get(i).getName());
+                                        break;
+                                    }
+                                }
+                            }
+                            adapter.notifyDataSetChanged();
                         }
                     }
                 }
             });
+
+
 }
