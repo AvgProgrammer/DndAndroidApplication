@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Parent1"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/Parent1">
+    android:background="#7A3F3F"
+    app:cardBackgroundColor="#000000"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
 
-    <TextView
-        android:id="@+id/CharName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Name Character:"
-        android:textColor="#000000" />
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7A3F3F">
+
+        <TextView
+            android:id="@+id/CharName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="7dp"
+            android:text="Name Character:"
+            android:textColor="#000000" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
