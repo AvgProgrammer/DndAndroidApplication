@@ -38,11 +38,13 @@ public class CharacterRecViewAdapter extends RecyclerView.Adapter<CharacterRecVi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder1 holder, int position) {
-            holder.CharName.setText((position+1)+")"+characters.get(position).getName());
+        int currentPosition = holder.getAdapterPosition();
+        holder.CharName.setText((position+1)+")"+characters.get(position).getName());
             holder.Parent1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent=new Intent(mContext, PreviewSheet.class);
+                    intent.putExtra("Character",characters.get(currentPosition));
                     mContext.startActivity(intent);
                 }
             });

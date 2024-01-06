@@ -47,7 +47,7 @@ public class CharacterListActivity extends AppCompatActivity {
                 mStartForResult.launch(intent);
             }
         });
-        adapter = new CharacterRecViewAdapter();
+        adapter = new CharacterRecViewAdapter(this);
         adapter.setCharacters(CharList);
 
         CharactersList.setAdapter(adapter);
@@ -77,7 +77,7 @@ public class CharacterListActivity extends AppCompatActivity {
                         if (data != null) {
                             // Retrieve the CharacterSheet object
                             CharacterSheet newCharacter = (CharacterSheet) data.getSerializableExtra("newCharacter");
-
+                            newCharacter.setID(CharList.size());
                             CharList.add(newCharacter);
                             adapter.notifyDataSetChanged();
                             // Add the new character to the ArrayList
