@@ -15,11 +15,12 @@ import android.widget.TextView;
 import com.example.CharacterSheet.CharacterSheet;
 import com.example.CharacterSheet.DnDClass;
 import com.example.CharacterSheet.Race;
+import com.example.Dice.DiceRNGImpl;
 
 
 public class CharacterSheetActivity extends AppCompatActivity {
 
-    protected Button ReturnButton,AddCharacter;
+    protected Button ReturnButton,AddCharacter,DiceButton;
     protected EditText CharacterNameText,DescriptionText,StrengthText,DexterityText,IntelligenceText,WisdomText,CharismaText,ConstitutionText;
     protected CharacterSheet EditableCharacter;
     protected TextView txtNameWrn,txtStatsWrn,txtDescWrn;
@@ -175,6 +176,18 @@ public class CharacterSheetActivity extends AppCompatActivity {
                 finish(); // This will mimic the default back press action
             }
         });
+        DiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DiceRNGImpl dice=new DiceRNGImpl();
+                StrengthText.setText(Integer.toString(dice.rng()));
+                DexterityText.setText(Integer.toString(dice.rng()));
+                WisdomText.setText(Integer.toString(dice.rng()));
+                IntelligenceText.setText(Integer.toString(dice.rng()));
+                CharismaText.setText(Integer.toString(dice.rng()));
+                ConstitutionText.setText(Integer.toString(dice.rng()));
+            }
+        });
 
     }
     public void onCharacterCreated(CharacterSheet newCharacter) {
@@ -293,6 +306,7 @@ public class CharacterSheetActivity extends AppCompatActivity {
         txtNameWrn=findViewById(R.id.txtNameWrn);
         txtStatsWrn=findViewById(R.id.txtStatsWrn);
         txtDescWrn=findViewById(R.id.txtDescWrn);
+        DiceButton=findViewById(R.id.DiceButton);
     }
 
 
