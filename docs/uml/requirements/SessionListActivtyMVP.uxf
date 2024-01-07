@@ -1,0 +1,12 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>420</x><y>100</y><w>340</w><h>370</h></coordinates><panel_attributes>SessionListActivity
+--
+# Button: Return
+# Button: InviteButton
+# Button: PlaySession;
+- ArrayList&lt;Session&gt;:SessList
+- ArrayList&lt;Session&gt;: CharList
+--
+#onCreate(Bundle savedInstanceState):void
++ onClick(View v):void
+-  initViews():void
+- mStartForResult: ActivityResultLauncher&lt;Intent&gt;</panel_attributes><additional_attributes></additional_attributes></element></diagram>

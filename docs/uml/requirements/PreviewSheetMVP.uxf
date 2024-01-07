@@ -1,0 +1,23 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>540</x><y>100</y><w>360</w><h>340</h></coordinates><panel_attributes>PreviewSheet
+--
+# TextView:PreviewName
+# TextView:PreviewGender
+# TextView:PreviewClass
+# TextView:PreviewRace
+# TextView:PreviewStr
+# TextView:PreviewDex
+# TextView:PreviewWis
+# TextView:PreviewInt
+# TextView:PreviewChr
+# TextView:PreviewCon
+# TextView:PreviewDesc;
+--
+# Button: EditButton
+# Button: EndButton;
+# Integer: CharacterID;
+- CharacterSheet: prvChar;
+--
++onCharacterCreated:void
+- updated():void
+- mStartForResult:ActivityResultLauncher&lt;Intent&gt; 
++initValues():void</panel_attributes><additional_attributes></additional_attributes></element></diagram>

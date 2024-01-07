@@ -1,0 +1,12 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>550</x><y>200</y><w>330</w><h>280</h></coordinates><panel_attributes>CharacterListActivity
+--
+# CharactersList: RecyclerView
+- adapter: CharacterRecViewAdapter
+- play: boolean
+--
+# onCreate(Bundle savedInstanceState): void
++ onClick(View v): void
++ onClick(View v): void
++ onClick(View v): void
++ initViews(): void
++ onActivityResult(ActivityResult result): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>

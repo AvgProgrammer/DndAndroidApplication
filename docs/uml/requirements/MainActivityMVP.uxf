@@ -1,0 +1,11 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>480</x><y>180</y><w>330</w><h>200</h></coordinates><panel_attributes>MainActivity
+--
+- Button:SessionsButton
+- Button: CharactersButton
+- Button: QuitButton
+-Player: player;
+--
+-initViews():void
+-mStartForResult:ActivityResultLauncher&lt;Intent&gt;
++onClick(View v):void
+#onCreate(Bundle savedInstanceState):void</panel_attributes><additional_attributes></additional_attributes></element></diagram>

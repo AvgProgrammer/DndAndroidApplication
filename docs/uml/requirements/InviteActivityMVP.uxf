@@ -1,0 +1,21 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>450</x><y>210</y><w>380</w><h>330</h></coordinates><panel_attributes>InviteActivity
+--
+# EditText:InviteSender
+# EditText:InviteReceivers
+# EditText:InviteLocation
+# EditText:InviteDate
+# EditText:InviteDesc
+#TextView SendersWrn
+#TextView ReceiversWrn
+#TextView DescWrn
+#TextView DateWrn
+#TextView LocationWrn;
+#Button InviteSend
+#Button InviteReturn
+--
+# onCreate(Bundle savedInstanceState):void
++ onClick(View v):void
+- initValues():void
+- ValidData():boolean
+- WrnOff():void
+-onClickSent(SessionScheduler sessionScheduler):void</panel_attributes><additional_attributes></additional_attributes></element></diagram>
