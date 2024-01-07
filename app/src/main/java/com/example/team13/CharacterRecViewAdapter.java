@@ -22,10 +22,12 @@ public class CharacterRecViewAdapter extends RecyclerView.Adapter<CharacterRecVi
     private ArrayList<CharacterSheet> characters=new ArrayList<CharacterSheet>();
     private Context mContext;
     private ActivityResultLauncher<Intent> launcher;
+    private boolean play;
 
-    public CharacterRecViewAdapter(Context mContext, ActivityResultLauncher<Intent> launcher) {
+    public CharacterRecViewAdapter(Context mContext, ActivityResultLauncher<Intent> launcher,boolean play) {
         this.mContext = mContext;
         this.launcher = launcher;
+        this.play=play;
     }
 
 
@@ -41,6 +43,7 @@ public class CharacterRecViewAdapter extends RecyclerView.Adapter<CharacterRecVi
     public void onBindViewHolder(@NonNull ViewHolder1 holder, int position) {
         int currentPosition = holder.getAdapterPosition();
         holder.CharName.setText((position+1)+")"+characters.get(position).getName());
+        if(play!=true){
             holder.Parent1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -49,6 +52,17 @@ public class CharacterRecViewAdapter extends RecyclerView.Adapter<CharacterRecVi
                     launcher.launch(intent);
                 }
             });
+        }else{
+            holder.Parent1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(mContext, PlaySession.class);
+                    intent.putExtra("Character",characters.get(currentPosition));
+                    launcher.launch(intent);
+                }
+            });
+        }
+
     }
 
     @Override

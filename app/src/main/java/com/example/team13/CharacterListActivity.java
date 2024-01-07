@@ -27,6 +27,7 @@ public class CharacterListActivity extends AppCompatActivity {
     private ArrayList<CharacterSheet> CharList;
 
     private CharacterRecViewAdapter adapter;
+    private boolean play;
 
     private static final int REQUEST_CODE_PREVIEW = 1001;
 
@@ -40,12 +41,20 @@ public class CharacterListActivity extends AppCompatActivity {
         if(intent.hasExtra("CharList")){
             CharList = (ArrayList) intent.getSerializableExtra("CharList");
         }
+        if(intent.hasExtra("play")){
+            play= intent.getBooleanExtra("play",true);
+        }
         initViews();
-        adapter = new CharacterRecViewAdapter(this,mStartForResult);
+        adapter = new CharacterRecViewAdapter(this,mStartForResult,play);
         adapter.setCharacters(CharList);
 
         CharactersList.setAdapter(adapter);
         CharactersList.setLayoutManager(new LinearLayoutManager(this));
+        if(play==true){
+            AddButton.setVisibility(View.GONE);
+        }else{
+            AddButton.setVisibility(View.VISIBLE);
+        }
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,22 +64,32 @@ public class CharacterListActivity extends AppCompatActivity {
             }
         });
         Button BackButton = findViewById(R.id.BackButton);
-        BackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent returnIntent = new Intent();
+        if(play==true){
+            BackButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }else{
+            BackButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent returnIntent = new Intent();
 
-                // Assuming CharacterSheet is serializable or parcelable.
-                // If not, you will need to break down the object into primitives or implement Serializable or Parcelable in the CharacterSheet class.
-                returnIntent.putExtra("Characters", CharList);
+                    // Assuming CharacterSheet is serializable or parcelable.
+                    // If not, you will need to break down the object into primitives or implement Serializable or Parcelable in the CharacterSheet class.
+                    returnIntent.putExtra("Characters", CharList);
 
-                // Set the result with the Intent
-                setResult(RESULT_OK, returnIntent);
+                    // Set the result with the Intent
+                    setResult(RESULT_OK, returnIntent);
 
-                // Define the action to perform on click
-                finish(); // This will mimic the default back press action
-            }
-        });
+                    // Define the action to perform on click
+                    finish(); // This will mimic the default back press action
+                }
+            });
+        }
+
     }
 
     private void initViews(){
