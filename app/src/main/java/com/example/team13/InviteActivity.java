@@ -20,6 +20,12 @@ public class InviteActivity extends AppCompatActivity {
     protected EditText InviteSender,InviteReceivers,InviteLocation,InviteDate,InviteDesc;
     protected TextView SendersWrn,ReceiversWrn,DescWrn,DateWrn,LocationWrn;
     protected Button InviteSend,InviteReturn;
+
+    /**
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +64,10 @@ public class InviteActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Initialize Values
+     */
     private void initValues(){
         InviteSender=findViewById(R.id.InviteSender);
         InviteReceivers=findViewById(R.id.InviteReceivers);
@@ -74,6 +84,10 @@ public class InviteActivity extends AppCompatActivity {
         InviteSend=findViewById(R.id.InviteSend);
         InviteReturn=findViewById(R.id.InviteReturn);
     }
+
+    /**
+     * Checks the users Input
+     */
     private boolean ValidData(){
         boolean returner=true;
         if(InviteSender.getText().toString().equals("")){
@@ -112,12 +126,20 @@ public class InviteActivity extends AppCompatActivity {
         }
         return returner;
     }
+
+    /**
+     * Remove the Warnings
+     */
     private void WrnOff(){
         SendersWrn.setVisibility(View.GONE);
         ReceiversWrn.setVisibility(View.GONE);
         DescWrn.setVisibility(View.GONE);
         DateWrn.setVisibility(View.GONE);
     }
+
+    /**
+     * @param sessionScheduler return the SessionScheduler and finish the activity
+     */
     private void onClickSent(SessionScheduler sessionScheduler){
         Intent returnIntent = new Intent();
 

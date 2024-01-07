@@ -32,6 +32,9 @@ public class CharacterListActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_PREVIEW = 1001;
 
     @Override
+    /**
+     * @param savedInstanceState Creates the Activity>
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_list);
@@ -57,6 +60,9 @@ public class CharacterListActivity extends AppCompatActivity {
         }
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * @param v Creates the Activity when the button is pressed>
+             */
             public void onClick(View v) {
                 Intent intent=new Intent(CharacterListActivity.this, CharacterSheetActivity.class);
                 intent.putExtra("Checker",true);
@@ -66,6 +72,9 @@ public class CharacterListActivity extends AppCompatActivity {
         Button BackButton = findViewById(R.id.BackButton);
         if(play==true){
             BackButton.setOnClickListener(new View.OnClickListener() {
+                /**
+                 * @param v Finish the Activity when the button is pressed>
+                 */
                 @Override
                 public void onClick(View v) {
                     finish();
@@ -73,6 +82,9 @@ public class CharacterListActivity extends AppCompatActivity {
             });
         }else{
             BackButton.setOnClickListener(new View.OnClickListener() {
+                /**
+                 * @paramv v finish the activity and returns the list>
+                 */
                 @Override
                 public void onClick(View v) {
                     Intent returnIntent = new Intent();
@@ -92,11 +104,18 @@ public class CharacterListActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Initialize Values
+     */
     private void initViews(){
         AddButton =findViewById(R.id.AddButton);
         BackButton=findViewById(R.id.BackButton);
         CharactersList=findViewById(R.id.CharactersList);
     }
+
+    /**
+     * Overrides the onActivityResult methods and change the adapter according to the returned value
+     */
     private ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {

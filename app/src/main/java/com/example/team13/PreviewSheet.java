@@ -56,6 +56,10 @@ public class PreviewSheet extends AppCompatActivity {
 
 
     }
+
+    /**
+     * Initialize Values
+     */
     private void initValues(){
         PreviewName=findViewById(R.id.PreviewName);
 
@@ -75,6 +79,10 @@ public class PreviewSheet extends AppCompatActivity {
         EditButton=findViewById(R.id.EditButton);
         EndButton=findViewById(R.id.EndButton);
     }
+
+    /**
+     * Gets the values of the finished activity
+     */
     private ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -92,6 +100,10 @@ public class PreviewSheet extends AppCompatActivity {
                     }
                 }
             });
+
+    /**
+     * Updates the character
+     */
     private void updated(){
         PreviewName.setText(prvChar.getName());
 
@@ -122,6 +134,10 @@ public class PreviewSheet extends AppCompatActivity {
 
         PreviewDesc.setText(prvChar.getDescription());
     }
+
+    /**
+     * @param newCharacter Finish the activity and returns the new Updated Character
+     */
     public void onCharacterCreated(CharacterSheet newCharacter) {
         // Create an Intent to send the result back
         Intent returnIntent = new Intent();

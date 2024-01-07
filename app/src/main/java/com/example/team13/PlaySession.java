@@ -12,12 +12,18 @@ import android.widget.Toast;
 import com.example.CharacterSheet.CharacterSheet;
 import com.example.Dice.DiceRoll;
 
+/**
+ *
+ */
 public class PlaySession extends AppCompatActivity {
 
     protected Button ReturnPlay,DiceModif,AddExp;
     protected EditText Modifier,Exp;
     protected CharacterSheet playChar;
 
+    /**
+     * @param savedInstanceState Creates the Activity>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +35,18 @@ public class PlaySession extends AppCompatActivity {
         }
         initValues();
         ReturnPlay.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
         DiceModif.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param v Calculates the Modifier and prints on a toast message.
+             */
             @Override
             public void onClick(View v) {
                 if(Modifier.getText().toString().equals("Str")){
@@ -71,6 +83,9 @@ public class PlaySession extends AppCompatActivity {
         });
         AddExp.setOnClickListener(new View.OnClickListener() {
             @Override
+            /**
+             * @param v Adds the exp and prints the new level on a toast message.
+             */
             public void onClick(View v) {
                 playChar.addExp(Integer.parseInt(Exp.getText().toString()));
                 Toast.makeText(PlaySession.this,"Current Level:"+playChar.getlevel(),Toast.LENGTH_SHORT).show();
@@ -78,6 +93,10 @@ public class PlaySession extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Initialize Values
+     */
     private void initValues(){
         ReturnPlay=findViewById(R.id.ReturnPay);
         DiceModif=findViewById(R.id.DiceModif);

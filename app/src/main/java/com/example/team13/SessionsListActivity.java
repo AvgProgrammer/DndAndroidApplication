@@ -25,6 +25,11 @@ public class SessionsListActivity extends AppCompatActivity {
     private ArrayList<Session> SessList;
     private ArrayList<Session> CharList;
 
+    /**
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,12 +68,20 @@ public class SessionsListActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Initialize Values
+     */
     private void initViews(){
 
         Return =findViewById(R.id.Return);
         InviteButton=findViewById(R.id.InviteButton);
         PlaySession=findViewById(R.id.PlaySession);
     }
+
+    /**
+     * Gets the values of the finished activity
+     */
     private ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {

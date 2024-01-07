@@ -26,6 +26,12 @@ public class CharacterSheetActivity extends AppCompatActivity {
     protected TextView txtNameWrn,txtStatsWrn,txtDescWrn;
     protected RadioGroup rgGender,rgRace,rgClass;
     protected RadioButton male,female,NonBinary,Bard,Fighter,Wizard,Dwarf,Elf,Human;
+
+    /**
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +118,9 @@ public class CharacterSheetActivity extends AppCompatActivity {
         int finalnumber=number;
         boolean finalChecker = checker;
         addCharacter.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param v check the user input add returns the character.
+             */
             @Override
             public void onClick(View v) {
                 if(validInput()==true) {
@@ -170,6 +179,9 @@ public class CharacterSheetActivity extends AppCompatActivity {
 
         Button returnButton = findViewById(R.id.ReturnButton);
         returnButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param v finish the activity.
+             */
             @Override
             public void onClick(View v) {
                 // Define the action to perform on click
@@ -177,6 +189,9 @@ public class CharacterSheetActivity extends AppCompatActivity {
             }
         });
         DiceButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param v Print the values of the dice
+             */
             @Override
             public void onClick(View v) {
                 DiceRNGImpl dice=new DiceRNGImpl();
@@ -190,6 +205,10 @@ public class CharacterSheetActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * @param newCharacter returns the newCharacter
+     */
     public void onCharacterCreated(CharacterSheet newCharacter) {
         // Create an Intent to send the result back
         Intent returnIntent = new Intent();
@@ -204,6 +223,10 @@ public class CharacterSheetActivity extends AppCompatActivity {
         // Finish the activity
         finish();
     }
+
+    /**
+     * @param newCharacter returns the updated character
+     */
     public void onCharacterUpdated(CharacterSheet newCharacter) {
         // Create an Intent to send the result back
         Intent returnIntent = new Intent();
@@ -219,11 +242,18 @@ public class CharacterSheetActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * remove the Warnings
+     */
     private void removeWrn(){
         txtNameWrn.setVisibility(View.GONE);
         txtDescWrn.setVisibility(View.GONE);
         txtStatsWrn.setVisibility(View.GONE);
     }
+
+    /**
+     * Checks the user Input
+     */
     private boolean validInput(){
             boolean returner=true;
         if(CharacterNameText.getText().toString().equals("")){
@@ -274,6 +304,10 @@ public class CharacterSheetActivity extends AppCompatActivity {
 
         return  returner;
     }
+
+    /**
+     * Initialize Values
+     */
     private void initViews(){
         ReturnButton = findViewById(R.id.ReturnButton);
         AddCharacter=findViewById(R.id.AddCharacter);

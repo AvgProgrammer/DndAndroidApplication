@@ -39,6 +39,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Initialize Values
+     */
     private void initViews(){
         SingIn = findViewById(R.id.SingIn);
         SingUp = findViewById(R.id.SingUp);
