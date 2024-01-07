@@ -1,9 +1,15 @@
 package com.example.team13;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,7 +24,8 @@ public class MainActivity extends AppCompatActivity{
 
     private Button SessionsButton,CharactersButton,QuitButton;
     private Player player;
-
+    ArrayList<CharacterSheet> Chars=new ArrayList<>();
+    ArrayList<Session> Sess=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +39,6 @@ public class MainActivity extends AppCompatActivity{
         if (intent.hasExtra("Player")) {
 
             player = (Player) intent.getSerializableExtra("Player");}
-            ArrayList<CharacterSheet> Chars=new ArrayList<>();
-            ArrayList<Session> Sess=new ArrayList<>();
 
             initViews();
         CharactersButton.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, CharacterListActivity.class);
                 intent.putExtra("CharList", Chars);
-                startActivity(intent);
+                mStartForResult.launch(intent);
             }
         });
         SessionsButton.setOnClickListener(new View.OnClickListener() {
@@ -65,4 +70,21 @@ public class MainActivity extends AppCompatActivity{
         CharactersButton = findViewById(R.id.CharactersButton);
         QuitButton = findViewById(R.id.QuitButton);
     }
+    private ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null) {
+                            // Retrieve the CharacterSheet object
+                            ArrayList<CharacterSheet> characters=new ArrayList<>();
+                            characters = (ArrayList) data.getSerializableExtra("Characters");
+                            Chars=characters;
+
+                        }
+                    }
+                }
+            });
 }

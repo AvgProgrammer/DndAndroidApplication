@@ -58,6 +58,15 @@ public class CharacterListActivity extends AppCompatActivity {
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent returnIntent = new Intent();
+
+                // Assuming CharacterSheet is serializable or parcelable.
+                // If not, you will need to break down the object into primitives or implement Serializable or Parcelable in the CharacterSheet class.
+                returnIntent.putExtra("Characters", CharList);
+
+                // Set the result with the Intent
+                setResult(RESULT_OK, returnIntent);
+
                 // Define the action to perform on click
                 finish(); // This will mimic the default back press action
             }
