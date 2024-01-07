@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class SessionsListActivity extends AppCompatActivity {
 
-    protected Button Return;
+    protected Button Return,InviteButton;
     private ArrayList<Session> SessList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,13 @@ public class SessionsListActivity extends AppCompatActivity {
         }
 
         initViews();
-
+        InviteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SessionsListActivity.this, InviteActivity.class);
+                startActivity(intent);
+            }
+        });
         Return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +43,8 @@ public class SessionsListActivity extends AppCompatActivity {
         });
     }
     private void initViews(){
+
         Return =findViewById(R.id.Return);
+        InviteButton=findViewById(R.id.InviteButton);
     }
 }
