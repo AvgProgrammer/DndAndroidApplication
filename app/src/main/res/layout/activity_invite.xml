@@ -65,7 +65,7 @@
         android:id="@+id/InviteLocation"
         android:layout_width="223dp"
         android:layout_height="52dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="208dp"
         android:ems="10"
         android:hint="Location"
         android:inputType="text"
@@ -88,8 +88,9 @@
         android:id="@+id/SendersWrn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="72dp"
         android:layout_marginBottom="12dp"
+        android:text="TextView"
         android:textColor="#D10D0D"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/InviteSender"
@@ -100,8 +101,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="332dp"
-        android:text=""
+        android:text="TextView"
         android:textColor="#D10D0D"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline12" />
 
@@ -111,6 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginBottom="8dp"
+        android:text="TextView"
         android:textColor="#D10D0D"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/InviteReceivers"
@@ -130,9 +133,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginBottom="16dp"
+        android:text="TextView"
         android:textColor="#D10D0D"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/InviteDate"
+        app:layout_constraintStart_toStartOf="@+id/guideline12" />
+
+    <TextView
+        android:id="@+id/LocationWrn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textColor="#D10D0D"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/InviteLocation"
         app:layout_constraintStart_toStartOf="@+id/guideline12" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

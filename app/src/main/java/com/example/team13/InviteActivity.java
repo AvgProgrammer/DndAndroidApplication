@@ -18,7 +18,7 @@ import java.util.Locale;
 
 public class InviteActivity extends AppCompatActivity {
     protected EditText InviteSender,InviteReceivers,InviteLocation,InviteDate,InviteDesc;
-    protected TextView SendersWrn,ReceiversWrn,DescWrn,DateWrn;
+    protected TextView SendersWrn,ReceiversWrn,DescWrn,DateWrn,LocationWrn;
     protected Button InviteSend,InviteReturn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class InviteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(ValidData()){
+                    WrnOff();
                     SessionScheduler sessionScheduler=new SessionScheduler();
                     sessionScheduler.setSender(InviteSender.getText().toString());
                     sessionScheduler.setDescription(InviteDesc.getText().toString());
@@ -54,7 +55,6 @@ public class InviteActivity extends AppCompatActivity {
 
                     onClickSent(sessionScheduler);
                 }
-                WrnOff();
             }
         });
     }
@@ -69,32 +69,48 @@ public class InviteActivity extends AppCompatActivity {
         ReceiversWrn=findViewById(R.id.ReceiversWrn);
         DescWrn=findViewById(R.id.DescWrn);
         DateWrn=findViewById(R.id.DateWrn);
+        LocationWrn=findViewById(R.id.LocationWrn);
 
         InviteSend=findViewById(R.id.InviteSend);
         InviteReturn=findViewById(R.id.InviteReturn);
     }
     private boolean ValidData(){
+        boolean returner=true;
         if(InviteSender.getText().toString().equals("")){
             SendersWrn.setText("Sender Missing");
             SendersWrn.setVisibility(View.VISIBLE);
-            return false;
+            returner=false;
+        }else{
+            SendersWrn.setVisibility(View.GONE);
         }
         if(InviteReceivers.getText().toString().equals("")){
             ReceiversWrn.setText("Receivers Missing");
             ReceiversWrn.setVisibility(View.VISIBLE);
-            return false;
+            returner=false;
+        }else{
+            ReceiversWrn.setVisibility(View.GONE);
         }
         if(InviteDesc.getText().toString().equals("")){
             DescWrn.setText("Description Missing");
             DescWrn.setVisibility(View.VISIBLE);
-            return false;
+            returner=false;
+        }else{
+            DescWrn.setVisibility(View.GONE);
         }
         if(InviteDate.getText().toString().equals("")){
             DateWrn.setText("Date Missing");
             DateWrn.setVisibility(View.VISIBLE);
-            return false;
+            returner=false;
+        }else{
+            DateWrn.setVisibility(View.GONE);
+        }if(InviteLocation.getText().toString().equals("")){
+            LocationWrn.setVisibility(View.VISIBLE);
+            LocationWrn.setText("Location Missing");
+            returner=false;
+        }else{
+            LocationWrn.setVisibility(View.GONE);
         }
-        return true;
+        return returner;
     }
     private void WrnOff(){
         SendersWrn.setVisibility(View.GONE);
