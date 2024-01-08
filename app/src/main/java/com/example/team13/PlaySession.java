@@ -49,34 +49,34 @@ public class PlaySession extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                if(Modifier.getText().toString().equals("Str")){
+                if(Modifier.getText().toString().toLowerCase().equals("str")){
                     int str=playChar.getStrengthModifier();
                     DiceRoll dice=new DiceRoll(str);
-                    Toast.makeText(PlaySession.this,dice.getDescription(),Toast.LENGTH_SHORT).show();
-                }else if(Modifier.getText().toString().equals("Dex")){
+                    Toast.makeText(PlaySession.this, String.valueOf(dice.getResult()),Toast.LENGTH_SHORT).show();
+                }else if(Modifier.getText().toString().toLowerCase().equals("dex")){
                     int str=playChar.getDexterityModifier();
                     DiceRoll dice=new DiceRoll(str);
-                    Toast.makeText(PlaySession.this,dice.getDescription(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PlaySession.this, String.valueOf(dice.getResult()),Toast.LENGTH_SHORT).show();
                 }
-                else if(Modifier.getText().toString().equals("Wis")){
+                else if(Modifier.getText().toString().toLowerCase().equals("wis")){
                     int str=playChar.getWisdomModifier();
                     DiceRoll dice=new DiceRoll(str);
-                    Toast.makeText(PlaySession.this,dice.getDescription(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PlaySession.this, String.valueOf(dice.getResult()),Toast.LENGTH_SHORT).show();
                 }
-                else if(Modifier.getText().toString().equals("Int")){
+                else if(Modifier.getText().toString().toLowerCase().equals("int")){
                     int str=playChar.getIntelligenceModifier();
                     DiceRoll dice=new DiceRoll(str);
-                    Toast.makeText(PlaySession.this,dice.getDescription(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PlaySession.this, String.valueOf(dice.getResult()),Toast.LENGTH_SHORT).show();
                 }
-                else if(Modifier.getText().toString().equals("Chr")){
+                else if(Modifier.getText().toString().toLowerCase().equals("cha")){
                     int str=playChar.getCharismaModifier();
                     DiceRoll dice=new DiceRoll(str);
-                    Toast.makeText(PlaySession.this,dice.getDescription(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PlaySession.this, String.valueOf(dice.getResult()),Toast.LENGTH_SHORT).show();
                 }
-                else if(Modifier.getText().toString().equals("Con")){
+                else if(Modifier.getText().toString().toLowerCase().equals("con")){
                     int str=playChar.getConsitutionModifier();
                     DiceRoll dice=new DiceRoll(str);
-                    Toast.makeText(PlaySession.this,dice.getDescription(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PlaySession.this, String.valueOf(dice.getResult()),Toast.LENGTH_SHORT).show();
                 }
                 Modifier.setText("");
             }
