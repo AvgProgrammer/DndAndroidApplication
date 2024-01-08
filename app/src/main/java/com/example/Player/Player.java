@@ -7,18 +7,18 @@ import com.example.CharacterSheet.CharacterSheet;
 import com.example.Session.Session;
 import com.example.SessionScheduler.SessionScheduler;
 
-
 public class Player implements Serializable {
 
-
     private String name, email, password;
-        private ArrayList<CharacterSheet> characters;
-       private  ArrayList<Session> sessions;
-        
+    private int ID;
+    private ArrayList<CharacterSheet> characters;
+    private ArrayList<Session> sessions;
+
     public Player(String name, String email, String password) {
-        this.name=name;
-        this.email=email;
-        this.password=password;
+        this.ID = this.hashCode();
+        this.name = name;
+        this.email = email;
+        this.password = password;
         this.characters = new ArrayList<CharacterSheet>();
         this.sessions = new ArrayList<Session>();
     }
@@ -47,10 +47,15 @@ public class Player implements Serializable {
         return password;
     }
 
-    public ArrayList<CharacterSheet> getCharacters(){
+    public int getID() {
+        return ID;
+    }
+
+    public ArrayList<CharacterSheet> getCharacters() {
         return characters;
     }
-    public ArrayList<Session> getSessions(){
+
+    public ArrayList<Session> getSessions() {
         return sessions;
     }
 
